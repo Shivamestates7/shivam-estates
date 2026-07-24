@@ -1,0 +1,128 @@
+.services {
+  padding: 100px 4vw 80px;
+  background: #0B0C10; /* Dark premium charcoal */
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header Styling */
+.headingWrap {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.kicker {
+  color: #D4AF37;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.title span {
+  color: #D4AF37;
+  background: linear-gradient(135deg, #FFF0C3 0%, #D4AF37 50%, #C5A059 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #A0A0A0;
+  font-size: 1.05rem;
+  font-weight: 300;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Service Card Styling */
+.card {
+  padding: 36px 28px;
+  background: #1A1C23;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow: 0 14px 40px rgba(212, 175, 55, 0.12);
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 6px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: #D4AF37;
+  margin-bottom: 22px;
+}
+
+.iconWrap svg {
+  width: 26px;
+  height: 26px;
+}
+
+.cardTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+.cardText {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #B0B0B0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+}
+
+@media (max-width: 680px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 28px 20px;
+  }
+}

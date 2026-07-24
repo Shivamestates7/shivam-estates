@@ -1,0 +1,57 @@
+.section {
+  padding: 96px 5vw;
+  background: #050505;
+}
+
+.headingWrap {
+  margin-bottom: 30px;
+}
+
+.kicker {
+  color: #e5c28a;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  max-width: 760px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card {
+  padding: 26px;
+  border-radius: 22px;
+  background: rgba(16, 16, 16, 0.72);
+  border: 1px solid rgba(201, 167, 107, 0.18);
+}
+
+.stars {
+  color: #e5c28a;
+  letter-spacing: 0.15em;
+  margin-bottom: 14px;
+}
+
+.card p {
+  color: #ffffff;
+  line-height: 1.9;
+  margin-bottom: 18px;
+}
+
+.card span {
+  color: #bdbdbd;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+

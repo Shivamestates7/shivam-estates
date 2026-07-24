@@ -1,0 +1,174 @@
+.section {
+  padding: 100px 4vw;
+  background: #0B0C10;
+  color: #fff;
+  overflow: hidden; /* Prevents overflow scrollbars during marquee animation */
+}
+
+.headingWrap {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  color: #D4AF37;
+}
+
+.subtitle {
+  color: #A0A0A0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  margin-top: 8px;
+}
+
+/* =========================================
+   DESKTOP ACCORDION (Original untouched)
+   ========================================= */
+.desktopAccordion {
+  display: flex;
+  gap: 16px;
+  height: 480px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.accordionCard {
+  position: relative;
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  transition: flex 0.5s ease, border-color 0.3s ease;
+}
+
+.activeCard {
+  flex: 3.5;
+  border-color: #D4AF37;
+}
+
+.cardImage {
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%);
+}
+
+.cardContent {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  z-index: 2;
+}
+
+.tag {
+  color: #D4AF37;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.cardSubtitle {
+  color: #D0D0D0;
+  font-size: 0.88rem;
+  margin-top: 6px;
+}
+
+/* =========================================
+   MOBILE VIEW (Infinite Auto-Moving Track)
+   ========================================= */
+.mobileMarqueeWrapper {
+  display: none; /* Hidden on Desktop */
+}
+
+@media (max-width: 860px) {
+  /* Hide desktop accordion on mobile */
+  .desktopAccordion {
+    display: none;
+  }
+
+  .mobileMarqueeWrapper {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+  }
+
+  .mobileMarqueeTrack {
+    display: flex;
+    gap: 16px;
+    width: max-content; /* Allows items to stretch in a single continuous line */
+    will-change: transform;
+  }
+
+  .mobileCard {
+    width: 260px;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobileImageWrap {
+    position: relative;
+    width: 100%;
+    height: 180px;
+  }
+
+  .mobileOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(11, 12, 16, 0.9) 100%);
+  }
+
+  .mobileTag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(11, 12, 16, 0.85);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: #D4AF37;
+    font-size: 0.6rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    backdrop-filter: blur(4px);
+  }
+
+  .mobileCardBody {
+    padding: 14px 14px 18px;
+    background: #0B0C10;
+  }
+
+  .mobileTitle {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.15rem;
+    color: #FFF;
+    margin: 0 0 4px 0;
+  }
+
+  .mobileSubtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: #A0A0A0;
+    margin: 0;
+  }
+}

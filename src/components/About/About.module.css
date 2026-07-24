@@ -1,0 +1,194 @@
+.about {
+  padding: 100px 4vw 80px;
+  background: #0B0C10;
+  color: #FFFFFF;
+}
+
+.topSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto 60px;
+}
+
+.copy {
+  max-width: 580px;
+}
+
+.title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 3.8vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+}
+
+.title span {
+  color: #D4AF37;
+  background: linear-gradient(135deg, #FFF0C3 0%, #D4AF37 50%, #C5A059 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.leadText {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #E0E0E0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.bodyText {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #A0A0A0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  height: 380px; /* Adjust height as needed */
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.3); /* Premium gold border */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.image {
+  object-fit: cover; /* Ensures image fills the container cleanly */
+  object-position: center;
+}
+
+@media (max-width: 860px) {
+  .imageFrame {
+    height: 260px;
+  }
+}
+/* Light Container Card */
+.pillarsContainer {
+  max-width: 1280px;
+  margin: 0 auto 50px;
+  background: #F4EFEA;
+  border-radius: 6px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.pillarCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.pillarIcon {
+  width: 44px;
+  height: 44px;
+  color: #C5A059;
+  margin-bottom: 14px;
+}
+
+.pillarIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.pillarTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1A1C23;
+  margin-bottom: 8px;
+}
+
+.pillarDesc {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.82rem;
+  color: #555555;
+  line-height: 1.5;
+}
+
+/* Stats Section */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.statCard {
+  text-align: center;
+  padding: 24px 16px;
+  background: #1A1C23;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+.statValue {
+  display: block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #D4AF37;
+  margin-bottom: 6px;
+}
+
+.statLabel {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.82rem;
+  color: #E0E0E0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+  .pillarsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 860px) {
+  .topSection {
+    grid-template-columns: 1fr;
+  }
+
+  .imageFrame {
+    min-height: 300px;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .pillarsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}

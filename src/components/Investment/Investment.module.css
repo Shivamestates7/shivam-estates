@@ -1,0 +1,79 @@
+.section {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  gap: 24px;
+  align-items: center;
+  padding: 96px 5vw;
+  background: linear-gradient(180deg, rgba(201, 167, 107, 0.06), rgba(5, 5, 5, 0.24)), url('/background-overlay.svg') center/cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(5, 5, 5, 0.86), rgba(5, 5, 5, 0.48));
+}
+
+.copy,
+.card {
+  position: relative;
+  z-index: 1;
+}
+
+.kicker {
+  color: #e5c28a;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  max-width: 650px;
+  margin-bottom: 20px;
+}
+
+.benefits {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.benefits li {
+  position: relative;
+  padding-left: 18px;
+  color: #bdbdbd;
+}
+
+.benefits li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #e5c28a;
+}
+
+.card {
+  padding: 28px;
+  background: rgba(16, 16, 16, 0.8);
+  border: 1px solid rgba(201, 167, 107, 0.18);
+  border-radius: 24px;
+}
+
+.card strong {
+  display: block;
+  font-size: 1.55rem;
+  margin-bottom: 12px;
+  color: #e5c28a;
+}
+
+.card p {
+  color: #bdbdbd;
+  line-height: 1.85;
+}
+
+@media (max-width: 860px) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+}

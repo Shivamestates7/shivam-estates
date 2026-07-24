@@ -1,0 +1,271 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 5vw;
+  background: rgba(11, 12, 16, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Brand Styling (Left) */
+.brandWrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brandMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 6px;
+  color: #D4AF37;
+}
+
+.brandMark svg {
+  width: 20px;
+  height: 20px;
+}
+
+.brandInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #D4AF37;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.brandTag {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.6rem;
+  color: #A0A0A0;
+  letter-spacing: 0.1em;
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navLink {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #E0E0E0;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #D4AF37;
+}
+
+.ctaButton {
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #E6C687 0%, #C5A059 100%);
+  color: #0B0C10;
+  border-radius: 4px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Mobile Hamburger Button (Three Lines - Positioned Right) */
+.hamburgerBtn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 19px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 101;
+}
+
+.bar {
+  width: 100%;
+  height: 2px;
+  background: #D4AF37;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Overlay Backdrop */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 200;
+}
+
+/* Left Side Drawer */
+.sideDrawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  max-width: 82vw;
+  background: #0B0C10;
+  border-right: 1px solid rgba(212, 175, 55, 0.25);
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px;
+  box-shadow: 12px 0 40px rgba(0, 0, 0, 0.85);
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.drawerBrand {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #D4AF37;
+  margin: 0 0 2px 0;
+}
+
+.drawerBrandTag {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.6rem;
+  color: #888888;
+  letter-spacing: 0.12em;
+}
+
+.closeBtn {
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  color: #D4AF37;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.drawerDivider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.35), transparent);
+  margin: 22px 0 16px 0;
+}
+
+/* Cleaned Mobile Nav Links */
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.drawerLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 16px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 175, 55, 0.08);
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.drawerLink:hover {
+  background: rgba(212, 175, 55, 0.08);
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.linkLabel {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #E0E0E0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.linkArrow {
+  color: rgba(212, 175, 55, 0.4);
+  font-size: 0.85rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.drawerLink:hover .linkArrow {
+  color: #D4AF37;
+  transform: translateX(4px);
+}
+
+.drawerFooter {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.drawerCta {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  background: linear-gradient(135deg, #E6C687 0%, #C5A059 100%);
+  color: #0B0C10;
+  border-radius: 4px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 960px) {
+  .desktopNav,
+  .ctaButton {
+    display: none;
+  }
+
+  .hamburgerBtn {
+    display: flex;
+  }
+
+  .brandTag {
+    display: none;
+  }
+}

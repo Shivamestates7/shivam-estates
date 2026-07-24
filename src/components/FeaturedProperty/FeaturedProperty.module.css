@@ -1,0 +1,108 @@
+.featured {
+  padding: 96px 5vw;
+  background: #050505;
+}
+
+.headingWrap {
+  margin-bottom: 30px;
+}
+
+.kicker {
+  color: #e5c28a;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  max-width: 760px;
+}
+
+.showcase {
+  display: grid;
+  grid-template-columns: 1.25fr 0.8fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.primaryVisual,
+.thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(201, 167, 107, 0.16);
+}
+
+.primaryVisual {
+  min-height: 440px;
+}
+
+.sideStack {
+  display: grid;
+  gap: 18px;
+}
+
+.thumb {
+  min-height: 210px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.infoCard {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  padding: 18px;
+  background: rgba(16, 16, 16, 0.78);
+  border: 1px solid rgba(201, 167, 107, 0.18);
+  border-radius: 20px;
+}
+
+.infoCard div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.infoCard span {
+  color: #bdbdbd;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.infoCard strong {
+  font-size: 1.04rem;
+}
+
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #e5c28a, #c9a76b);
+  color: #050505;
+  font-weight: 700;
+  padding: 14px 18px;
+}
+
+@media (max-width: 900px) {
+  .showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .infoCard {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .infoCard {
+    grid-template-columns: 1fr;
+  }
+}

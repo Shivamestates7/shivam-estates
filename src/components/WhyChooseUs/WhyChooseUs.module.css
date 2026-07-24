@@ -1,0 +1,217 @@
+.section {
+  position: relative;
+  padding: 100px 4vw;
+  background: #0B0C10; /* Dark charcoal theme */
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.backdropGlow {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, rgba(11, 12, 16, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header */
+.headingWrap {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.kicker {
+  color: #D4AF37;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+  color: #ffffff;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.2;
+}
+
+.title span {
+  color: #D4AF37;
+  background: linear-gradient(135deg, #FFF0C3 0%, #D4AF37 50%, #C5A059 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Grid Layout */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Left List Navigation */
+.reasonsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reasonRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  background: rgba(26, 28, 35, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 8px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.activeRow {
+  background: rgba(26, 28, 35, 0.95);
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+.numberBadge {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #D4AF37;
+  min-width: 32px;
+}
+
+.rowTextWrap {
+  flex: 1;
+}
+
+.rowTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.rowSub {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: #A0A0A0;
+}
+
+.activeLine {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  bottom: 10%;
+  width: 3px;
+  background: #D4AF37;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+}
+
+/* Right Spotlight Card */
+.spotlightWrapper {
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+}
+
+.spotlightCard {
+  position: relative;
+  width: 100%;
+  padding: 40px;
+  background: linear-gradient(145deg, #1A1C23 0%, #12141A 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 8px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.iconCircle {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: #D4AF37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.iconCircle svg {
+  width: 28px;
+  height: 28px;
+}
+
+.spotlightId {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgba(212, 175, 55, 0.12);
+}
+
+.spotlightTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.spotlightBody {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #C0C0C0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 28px;
+}
+
+.cardFooterTag {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 4px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.75rem;
+  color: #D4AF37;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .spotlightCard {
+    padding: 28px 20px;
+  }
+}
