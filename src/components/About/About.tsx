@@ -123,7 +123,7 @@ export default function About() {
           transition={{ duration: 0.85, ease: 'easeInOut' }}
         >
           <Image
-            src="/about-estate.png"
+            src="/farmhouse.png"
             alt="Shivam Estates Luxury Office"
             fill
             className={styles.image}
