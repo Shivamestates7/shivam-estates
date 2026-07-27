@@ -1,89 +1,79 @@
 .about {
-  padding: 100px 4vw 80px;
-  background: #0B0C10;
-  color: #FFFFFF;
+  padding: 80px 1.5rem 60px;
+  background-color: #0c0d0f;
+  color: #ffffff;
 }
 
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Top Split Section */
 .topSection {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 3rem;
   align-items: center;
-  max-width: 1280px;
-  margin: 0 auto 60px;
+  margin-bottom: 3.5rem;
 }
 
 .copy {
-  max-width: 580px;
+  max-width: 480px;
 }
 
 .title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(2.2rem, 3.8vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1.15;
-  color: #FFFFFF;
-  margin-bottom: 24px;
-}
-
-.title span {
-  color: #D4AF37;
-  background: linear-gradient(135deg, #FFF0C3 0%, #D4AF37 50%, #C5A059 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+  font-size: 2.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 1.75rem;
+  letter-spacing: -0.01em;
 }
 
 .leadText {
   font-family: 'Inter', system-ui, sans-serif;
-  color: #E0E0E0;
-  font-size: 1.1rem;
-  font-weight: 500;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  font-weight: 400;
   line-height: 1.6;
-  margin-bottom: 12px;
+  margin-bottom: 1.25rem;
 }
 
 .bodyText {
   font-family: 'Inter', system-ui, sans-serif;
-  color: #A0A0A0;
-  font-size: 0.95rem;
-  line-height: 1.7;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  line-height: 1.65;
   font-weight: 300;
 }
 
 .imageFrame {
   position: relative;
   width: 100%;
-  height: 380px; /* Adjust height as needed */
-  border-radius: 12px;
+  height: 440px;
+  border-radius: 2px;
   overflow: hidden;
-  border: 1px solid rgba(212, 175, 55, 0.3); /* Premium gold border */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 .image {
-  object-fit: cover; /* Ensures image fills the container cleanly */
+  object-fit: cover;
   object-position: center;
 }
 
-@media (max-width: 860px) {
-  .imageFrame {
-    height: 260px;
-  }
-}
-/* Light Container Card */
+/* Off-White Card Container for Pillars */
 .pillarsContainer {
-  max-width: 1280px;
-  margin: 0 auto 50px;
-  background: #F4EFEA;
-  border-radius: 6px;
-  padding: 40px 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  background: #fbf9f5;
+  border-radius: 2px;
+  padding: 2.5rem 1.5rem;
+  color: #111111;
+  margin-bottom: 3.5rem;
 }
 
 .pillarsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
 }
 
 .pillarCard {
@@ -91,14 +81,35 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 10px;
+  padding: 0 1.25rem;
+  position: relative;
+}
+
+/* Vertical line divider between columns */
+.pillarCard:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background-color: #e5e0d8;
+}
+
+.pillarIconWrap {
+  margin-bottom: 1rem;
 }
 
 .pillarIcon {
-  width: 44px;
-  height: 44px;
-  color: #C5A059;
-  margin-bottom: 14px;
+  width: 38px;
+  height: 38px;
+  color: #cba358;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border: 1px solid #cba358;
+  border-radius: 50%;
 }
 
 .pillarIcon svg {
@@ -107,88 +118,75 @@
 }
 
 .pillarTitle {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.1rem;
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+  font-size: 1rem;
   font-weight: 700;
-  color: #1A1C23;
-  margin-bottom: 8px;
+  color: #111111;
+  margin-bottom: 0.6rem;
 }
 
 .pillarDesc {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 0.82rem;
-  color: #555555;
+  font-size: 0.8rem;
+  color: #4b5563;
   line-height: 1.5;
+  font-weight: 400;
 }
 
-/* Stats Section */
+/* Bottom Stats Section on Dark BG */
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  max-width: 1280px;
-  margin: 0 auto;
+  gap: 1.5rem;
+  text-align: center;
 }
 
 .statCard {
-  text-align: center;
-  padding: 24px 16px;
-  background: #1A1C23;
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  border-radius: 6px;
-  transition: transform 0.3s ease;
-}
-
-.statCard:hover {
-  transform: translateY(-4px);
-  border-color: rgba(212, 175, 55, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .statValue {
-  display: block;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
   font-size: 2.4rem;
-  font-weight: 700;
-  color: #D4AF37;
-  margin-bottom: 6px;
+  font-weight: 600;
+  color: #cba358;
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
 }
 
 .statLabel {
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 0.82rem;
-  color: #E0E0E0;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-weight: 400;
+  color: #d1d5db;
 }
 
-/* Responsive Rules */
-@media (max-width: 1024px) {
-  .pillarsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-}
-
-@media (max-width: 860px) {
+/* Responsive Styles */
+@media (max-width: 992px) {
   .topSection {
     grid-template-columns: 1fr;
   }
-
+  
   .imageFrame {
-    min-height: 300px;
+    height: 320px;
   }
 
-  .statsGrid {
+  .pillarsGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .pillarCard:not(:last-child)::after {
+    display: none;
   }
 }
 
-@media (max-width: 520px) {
-  .pillarsGrid {
-    grid-template-columns: 1fr;
-  }
-
+@media (max-width: 576px) {
+  .pillarsGrid,
   .statsGrid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }

@@ -5,87 +5,62 @@ import styles from './Services.module.css';
 
 const services = [
   {
-    title: 'Land Buying & Selling',
-    description:
-      'End-to-end guidance for purchasing and selling residential, commercial, and agricultural land with complete privacy and legal compliance.',
+    title: 'Land Investment Advisory',
+    description: 'Expert guidance to help you choose the right land for maximum returns.',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M3 21h18" />
-        <path d="M5 21V7l7-4 7 4v14" />
-        <path d="M9 10h6" />
-        <path d="M9 14h6" />
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z" />
       </svg>
     ),
   },
   {
-    title: 'Legal & Title Verification',
-    description:
-      'Thorough due diligence, title search reports, boundary verification, and legal documentation to guarantee 100% risk-free transactions.',
+    title: 'Verified Property Consultation',
+    description: 'Every property is thoroughly verified before recommendation.',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <path d="M9 12l2 2 4-4" />
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
       </svg>
     ),
   },
   {
-    title: 'Investment Advisory',
-    description:
-      'Strategic portfolio planning and market evaluation for high-yield returns across prime growth corridors and upcoming land developments.',
+    title: 'Builder & Land Development',
+    description: 'We work with trusted developers and landowners for quality projects.',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M22 12A10 10 0 1 1 12 2v10z" />
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1z" />
       </svg>
     ),
   },
   {
-    title: 'Joint Ventures & Development',
-    description:
-      'Connecting landowners with reputable developers to unlock the maximum valuation and potential of large acreage parcels.',
+    title: 'Documentation & Registration',
+    description: 'End-to-end support for paperwork, legal verification and registration.',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
       </svg>
     ),
   },
   {
-    title: 'Resale & Exit Strategy',
-    description:
-      'Targeted luxury positioning and network reach to ensure seamless liquidations and profitable exit opportunities for property investors.',
+    title: 'Site Visit Assistance',
+    description: 'Visit the property with our experts and make an informed decision.',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-        <polyline points="17 6 23 6 23 12" />
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
       </svg>
     ),
   },
   {
-    title: 'Post-Acquisition Care',
-    description:
-      'Dedicated assistance with fencing, possession handover, revenue record updates (7/12 extract), and ongoing land maintenance.',
+    title: 'End-to-End Transaction Support',
+    description: 'From booking to possession, we are with you at every step.',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
-        <path d="M12 8v4l3 3" />
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41 5.59 5.59 12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z" />
       </svg>
     ),
   },
 ];
 
-// Motion Variants
-const headerVariants: Variants = {
-  hidden: { opacity: 0, y: -20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-};
-
-const gridContainerVariants: Variants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -95,17 +70,12 @@ const gridContainerVariants: Variants = {
   },
 };
 
-
-
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 35 },
+const rowVariants: Variants = {
+  hidden: { opacity: 0, x: -20 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
+    x: 0,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
@@ -113,47 +83,85 @@ export default function Services() {
   return (
     <section id="services" className={styles.services}>
       <div className={styles.container}>
-        {/* Header Block */}
+        
+        {/* Header Section */}
         <motion.div
           className={styles.headingWrap}
-          variants={headerVariants}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: -25 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <p className={styles.kicker}>What We Do</p>
-          <h2 className={styles.title}>
-            Bespoke Services for <span>Land & Property</span>
-          </h2>
-          <p className={styles.subtitle}>
-            Comprehensive advisory, legal clarity, and strategic support tailored for private buyers and investors.
-          </p>
+          <span className={styles.kicker}>Premium Offerings</span>
+          <h2 className={styles.title}>Our Services</h2>
+          <div className={styles.goldLine} />
+          <p className={styles.subtitle}>Complete Solutions for a Seamless Experience</p>
         </motion.div>
 
-        {/* Services Grid */}
+        {/* Animated Wide Cream Card Container */}
         <motion.div
-          className={styles.grid}
-          variants={gridContainerVariants}
-          initial="hidden"
-          whileInView="visible"
+          className={styles.cardBox}
+          initial={{ opacity: 0, y: 35, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          {services.map((service) => (
-            <motion.article
-              key={service.title}
-              className={styles.card}
-              variants={cardVariants}
-              whileHover={{
-                y: -8,
-                transition: { duration: 0.3, ease: 'easeOut' },
-              }}
-            >
-              <div className={styles.iconWrap}>{service.icon}</div>
-              <h3 className={styles.cardTitle}>{service.title}</h3>
-              <p className={styles.cardText}>{service.description}</p>
-            </motion.article>
-          ))}
+          <motion.div
+            className={styles.servicesGrid}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {services.map((service) => (
+              <motion.div
+                key={service.title}
+                className={styles.serviceRow}
+                variants={rowVariants}
+                whileHover={{
+                  x: 6,
+                  transition: { duration: 0.25, ease: 'easeOut' },
+                }}
+              >
+                <motion.div
+                  className={styles.iconCircle}
+                  whileHover={{ scale: 1.1, rotate: 4 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+                >
+                  {service.icon}
+                </motion.div>
+                <div className={styles.rowContent}>
+                  <h3 className={styles.serviceTitle}>{service.title}</h3>
+                  <p className={styles.serviceDesc}>{service.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
+
+        {/* Animated Bottom CTA Banner */}
+        <motion.div
+          className={styles.ctaBanner}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+        >
+          <div className={styles.ctaGlow} />
+          <h3 className={styles.ctaTitle}>
+            We Handle The Details, <br />
+            <span>You Enjoy The Journey.</span>
+          </h3>
+          <motion.a
+            href="#contact"
+            className={styles.ctaButton}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            CONSULT OUR EXPERTS
+          </motion.a>
+        </motion.div>
+
       </div>
     </section>
   );
