@@ -3,23 +3,31 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from './About.module.css';
+import { Variants } from "framer-motion";
 
 // Animation variants for smooth text reveals
-const headingVariants = {
+const headingVariants: Variants = {
   hidden: { opacity: 0, y: 25 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1.0] } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
   },
 };
 
-const pillarVariants = {
+const pillarVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: (i) => ({
+  visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.15, duration: 0.6, ease: 'easeOut' },
+    transition: {
+      delay: i * 0.15,
+      duration: 0.6,
+      ease: "easeOut",
+    },
   }),
 };
 
