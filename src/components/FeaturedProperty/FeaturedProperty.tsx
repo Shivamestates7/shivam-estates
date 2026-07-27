@@ -22,7 +22,7 @@ export default function FeaturedProperty() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.85, ease: 'easeInOut' }}
         >
-          <Image src="/property-01.svg" alt="Featured luxury residence" fill className={styles.image} />
+          <Image src="/green-land.png" alt="Featured luxury residence" fill className={styles.image} />
         </motion.div>
 
         <div className={styles.sideStack}>
@@ -35,7 +35,7 @@ export default function FeaturedProperty() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7, ease: 'easeInOut' }}
             >
-              <Image src={image} alt="Luxury home gallery view" fill className={styles.image} />
+              <Image src="/investment.png" alt="Luxury home gallery view" fill className={styles.image} />
             </motion.div>
           ))}
         </div>
