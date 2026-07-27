@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, FormEvent } from "react";
+
 import { motion } from 'framer-motion';
 import styles from './Contact.module.css';
 
@@ -36,7 +37,7 @@ const contactDetails = [
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
-const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   setSubmitted(true);
   setTimeout(() => setSubmitted(false), 4000);
