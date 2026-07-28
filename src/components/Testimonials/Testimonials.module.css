@@ -11,12 +11,12 @@
   color: #e5c28a;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-bottom: 12px;
 }
 
 .title {
-  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-size: clamp(1.8rem, 3vw, 3.2rem);
   max-width: 760px;
 }
 

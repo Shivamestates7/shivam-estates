@@ -264,18 +264,18 @@
   }
   .title {
 
-    font-size: clamp(2.8rem, 4.5vh, 4.2rem); 
+    font-size: clamp(1.3rem, 4.5vh, 4.2rem); 
 
 
   }
   .leadText {
 
-     font-size: clamp(1.3rem, 2vh, 1.35rem);
+     font-size: clamp(1.1rem, 2vh, 1.35rem);
 
   }
   .bodyText {
      font-size: clamp(1.1rem, 2vh, 1.35rem);
-     font-weight: 500;
+     font-weight: 350;
 
 
   }

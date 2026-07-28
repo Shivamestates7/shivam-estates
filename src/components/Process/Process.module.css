@@ -133,7 +133,16 @@
   .section {
     padding: 60px 5vw;
   }
+.kicker {
+  font-size: 1.3rem;
 
+
+}
+.title {
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+
+
+}
   .timeline {
     grid-template-columns: 1fr;
     gap: 16px;

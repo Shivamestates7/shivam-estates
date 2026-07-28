@@ -196,10 +196,11 @@
   }
 
   .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 1.75rem;
     font-weight: 500;
      font-family: 'Poppins', 'Inter', sans-serif; /* or Manrope */
+     color: white;
 
   }
 
@@ -231,13 +232,13 @@
   }
 
   .featureLabel {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     white-space: normal; /* Allows text wrapping smoothly on small devices */
   }
 
   .featureIcon {
-    width: 49px;
-    height: 49px;
+    width: 40px;
+    height: 40px;
     padding: 6px;
   }
 }

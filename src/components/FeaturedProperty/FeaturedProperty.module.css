@@ -159,6 +159,11 @@
   .showcase {
     grid-template-columns: 1fr;
   }
+  .title {
+    font-size: clamp(1.8rem, 3.2vw, 3rem);
+    font-weight: 300;
+
+  }
 
   .primaryVisual,
   .thumb {

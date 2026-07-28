@@ -105,11 +105,11 @@
   }
 
   .title {
-    font-size: 2.7rem;
+    font-size: 2.1rem;
   }
 
   .subtitle {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-top: 35px;
   }
 
@@ -136,7 +136,7 @@
   .mobileCard {
     position: relative;
     width: 280px;  /* Slightly wider for presence */
-    height: 480px; /* Tall, premium ratio that fills the section proportion */
+    height: 380px; /* Tall, premium ratio that fills the section proportion */
     flex-shrink: 0;
     border: 1px solid rgba(212, 175, 55, 0.35);
     border-radius: 20px;
