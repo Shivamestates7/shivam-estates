@@ -1,85 +1,133 @@
 .featured {
-  padding: 96px 5vw;
+  padding: 64px 4vw;
   background: #050505;
+  color: #ffffff;
 }
 
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header Centering & Balance */
 .headingWrap {
-  margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 36px;
 }
 
 .kicker {
   color: #e5c28a;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.78rem;
-  margin-bottom: 12px;
+  letter-spacing: 0.2em;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .title {
-  font-size: clamp(2rem, 3vw, 3.2rem);
-  max-width: 760px;
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  max-width: 800px;
+  margin: 0 auto 12px;
+  line-height: 1.2;
 }
 
+.goldLine {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c9a76b, transparent);
+  margin: 0 auto;
+}
+
+/* Equal-Width 2-Column Grid Showcase Layout */
 .showcase {
   display: grid;
-  grid-template-columns: 1.25fr 0.8fr;
-  gap: 18px;
-  align-items: start;
+  grid-template-columns: 1fr 1fr; /* Changed from 1.6fr 1fr to equal columns */
+  gap: 20px;
+  align-items: stretch;
 }
 
+/* Image Containers with Equal Height and Width */
 .primaryVisual,
 .thumb {
   position: relative;
   overflow: hidden;
-  border-radius: 24px;
-  border: 1px solid rgba(201, 167, 107, 0.16);
+  width: 100%; /* Ensures both cards occupy identical width within grid columns */
+  height: 420px; /* Controlled equal height */
+  border-radius: 16px;
+  border: 1px solid rgba(201, 167, 107, 0.22);
+  background: #101010;
 }
 
-.primaryVisual {
-  min-height: 440px;
-}
-
-.sideStack {
-  display: grid;
-  gap: 18px;
-}
-
-.thumb {
-  min-height: 210px;
-}
-
+/* Image Element Scaling */
 .image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.infoCard {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  padding: 18px;
-  background: rgba(16, 16, 16, 0.78);
-  border: 1px solid rgba(201, 167, 107, 0.18);
-  border-radius: 20px;
+.primaryVisual:hover .image,
+.thumb:hover .image {
+  transform: scale(1.04);
 }
 
-.infoCard div {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.infoCard span {
-  color: #bdbdbd;
-  font-size: 0.8rem;
+/* Gold Badge */
+.badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(229, 194, 138, 0.4);
+  color: #e5c28a;
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
+  padding: 6px 12px;
+  border-radius: 999px;
+  z-index: 2;
 }
 
-.infoCard strong {
-  font-size: 1.04rem;
+/* Bottom Glassmorphism Info Bar */
+.infoCard {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  background: rgba(16, 16, 16, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 167, 107, 0.22);
+  border-radius: 16px;
 }
 
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.infoItem span {
+  color: #A0A0A0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.infoItem strong {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(201, 167, 107, 0.2);
+}
+
+/* CTA Button */
 .actionButton {
   display: inline-flex;
   align-items: center;
@@ -88,7 +136,23 @@
   background: linear-gradient(135deg, #e5c28a, #c9a76b);
   color: #050505;
   font-weight: 700;
-  padding: 14px 18px;
+  font-size: 0.88rem;
+  padding: 12px 24px;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.actionButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(201, 167, 107, 0.3);
+}
+
+/* Responsive Rules for Laptops and Mobile */
+@media (max-height: 800px) and (min-width: 901px) {
+  .primaryVisual,
+  .thumb {
+    height: 350px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -96,13 +160,24 @@
     grid-template-columns: 1fr;
   }
 
-  .infoCard {
-    grid-template-columns: 1fr 1fr;
+  .primaryVisual,
+  .thumb {
+    height: 280px;
   }
-}
 
-@media (max-width: 680px) {
   .infoCard {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .actionButton {
+    grid-column: 1 / -1;
+    width: 100%;
   }
 }

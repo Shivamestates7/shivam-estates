@@ -148,14 +148,39 @@
   color: #777777;
 }
 
+/* MOBILE CENTERING ADJUSTMENTS */
 @media (max-width: 840px) {
+  .footer {
+    padding: 48px 5vw 28px;
+    text-align: center;
+  }
+
   .content {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 36px;
+    justify-items: center;
+  }
+
+  .brandBlock {
+    align-items: center;
+  }
+
+  .links {
+    align-items: center;
+  }
+
+  .socials {
+    align-items: center;
+  }
+
+  .socialItem {
+    justify-content: center;
   }
 
   .bottomBar {
     flex-direction: column;
-    gap: 8px;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
   }
 }

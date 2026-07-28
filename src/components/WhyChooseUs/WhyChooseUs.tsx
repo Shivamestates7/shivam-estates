@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './WhyChooseUs.module.css';
 
@@ -11,6 +11,8 @@ const reasons = [
     shortText: 'Complete legal title checks and clear documentation.',
     detailText:
       'Every land parcel listed with Shivam Estates undergoes thorough legal scrutiny, revenue record updates (7/12 extract verification), and clear boundary demarcation before presentation.',
+    bgImage:
+      'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -24,6 +26,8 @@ const reasons = [
     shortText: 'No hidden costs, direct negotiations with buyers and sellers.',
     detailText:
       'We operate with full transparency at every phase. Direct pricing, structured timelines, and zero unexpected charges ensure complete peace of mind.',
+    bgImage:
+      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="12" cy="12" r="10" />
@@ -37,6 +41,8 @@ const reasons = [
     shortText: 'Deep insights into high-growth corridors and investment ROI.',
     detailText:
       'Leverage our 12+ years of local advisory experience to identify high-appreciation land, upcoming infrastructure corridors, and strategic commercial hotspots.',
+    bgImage:
+      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M22 12A10 10 0 1 1 12 2v10z" />
@@ -50,6 +56,8 @@ const reasons = [
     shortText: 'From site visits to registration and final possession handover.',
     detailText:
       'Our white-glove advisory team handles everything—guided site visits, agreement drafting, registration assistance, and post-possession land care.',
+    bgImage:
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -63,10 +71,23 @@ const reasons = [
 
 export default function WhyChooseUs() {
   const [activeReason, setActiveReason] = useState(reasons[0]);
+  const spotlightRef = useRef<HTMLDivElement>(null);
+
+  const handleSelectReason = (item: typeof reasons[0]) => {
+    setActiveReason(item);
+
+    // If on mobile (screen width <= 900px), smoothly scroll directly to the card
+    if (typeof window !== 'undefined' && window.innerWidth <= 900) {
+      spotlightRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+      });
+    }
+  };
 
   return (
     <section id="why-us" className={styles.section}>
-      {/* Subtle Background Radial Glow */}
+      {/* Background Radial Glow */}
       <motion.div
         className={styles.backdropGlow}
         animate={{
@@ -116,7 +137,7 @@ export default function WhyChooseUs() {
                   className={`${styles.reasonRow} ${
                     isSelected ? styles.activeRow : ''
                   }`}
-                  onClick={() => setActiveReason(item)}
+                  onClick={() => handleSelectReason(item)}
                   onMouseEnter={() => setActiveReason(item)}
                   whileHover={{ x: 6 }}
                   transition={{ duration: 0.2 }}
@@ -140,23 +161,35 @@ export default function WhyChooseUs() {
           </div>
 
           {/* Right Column: Dynamic Spotlight Card */}
-          <div className={styles.spotlightWrapper}>
+          <div ref={spotlightRef} className={styles.spotlightWrapper}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeReason.id}
                 className={styles.spotlightCard}
-                initial={{ opacity: 0, y: 20, scale: 0.98 }}
+                initial={{ opacity: 0, y: 15, scale: 0.98 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: -20, scale: 0.98 }}
-                transition={{ duration: 0.4, ease: 'easeOut' }}
+                exit={{ opacity: 0, y: -15, scale: 0.98 }}
+                transition={{ duration: 0.35, ease: 'easeOut' }}
               >
-                <div className={styles.iconCircle}>{activeReason.icon}</div>
-                <span className={styles.spotlightId}>{activeReason.id}</span>
-                <h3 className={styles.spotlightTitle}>{activeReason.title}</h3>
-                <p className={styles.spotlightBody}>{activeReason.detailText}</p>
+                <div className={styles.cardBgWrap}>
+                  <img
+                    src={activeReason.bgImage}
+                    alt={activeReason.title}
+                    className={styles.cardBgImage}
+                  />
+                  <div className={styles.cardOverlay} />
+                </div>
 
-                <div className={styles.cardFooterTag}>
-                  <span>Shivam Estates Guarantee</span>
+                {/* Foreground Card Content */}
+                <div className={styles.cardContent}>
+                  <div className={styles.iconCircle}>{activeReason.icon}</div>
+                  <span className={styles.spotlightId}>{activeReason.id}</span>
+                  <h3 className={styles.spotlightTitle}>{activeReason.title}</h3>
+                  <p className={styles.spotlightBody}>{activeReason.detailText}</p>
+
+                  <div className={styles.cardFooterTag}>
+                    <span>Shivam Estates Guarantee</span>
+                  </div>
                 </div>
               </motion.div>
             </AnimatePresence>

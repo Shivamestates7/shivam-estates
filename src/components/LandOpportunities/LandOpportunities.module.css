@@ -1,17 +1,17 @@
 .section {
-  padding: 100px 4vw;
-  background: #0B0C10;
+  padding: 80px 4vw;
+  background: #050505;
   color: #fff;
-  overflow: hidden; /* Prevents overflow scrollbars during marquee animation */
+  overflow: hidden;
 }
 
 .headingWrap {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
 .title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   color: #D4AF37;
 }
@@ -23,9 +23,7 @@
   margin-top: 8px;
 }
 
-/* =========================================
-   DESKTOP ACCORDION (Original untouched)
-   ========================================= */
+/* DESKTOP ACCORDION */
 .desktopAccordion {
   display: flex;
   gap: 16px;
@@ -75,7 +73,7 @@
 }
 
 .cardTitle {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Cinzel', Georgia, serif;
   font-size: 1.4rem;
   color: #fff;
   white-space: nowrap;
@@ -87,15 +85,34 @@
   margin-top: 6px;
 }
 
-/* =========================================
-   MOBILE VIEW (Infinite Auto-Moving Track)
-   ========================================= */
+/* MOBILE VIEW: Full-Screen height to block next sections */
 .mobileMarqueeWrapper {
-  display: none; /* Hidden on Desktop */
+  display: none;
 }
 
 @media (max-width: 860px) {
-  /* Hide desktop accordion on mobile */
+ 
+  .section {
+    padding: 56px 0; /* Compact padding eliminates top/bottom empty voids */
+    min-height: auto; 
+    scroll-margin-top: 80px;/* Remove 100dvh to stop forcing unnatural vertical gaps */
+  }
+
+  .headingWrap {
+    margin-bottom: 28px;
+    padding: 0 20px;
+    scroll-margin-top: 100px;
+  }
+
+  .title {
+    font-size: 2.7rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    margin-top: 35px;
+  }
+
   .desktopAccordion {
     display: none;
   }
@@ -104,71 +121,79 @@
     display: block;
     width: 100%;
     overflow: hidden;
-    padding: 10px 0;
+    padding: 8px 0;
   }
 
   .mobileMarqueeTrack {
     display: flex;
     gap: 16px;
-    width: max-content; /* Allows items to stretch in a single continuous line */
+    width: max-content;
     will-change: transform;
+    padding-left: 16px; /* Offsets first card nicely from screen edge */
   }
 
+  /* Well-proportioned mobile card layout */
   .mobileCard {
-    width: 260px;
+    position: relative;
+    width: 280px;  /* Slightly wider for presence */
+    height: 480px; /* Tall, premium ratio that fills the section proportion */
     flex-shrink: 0;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(212, 175, 55, 0.25);
-    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 20px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-  }
-
-  .mobileImageWrap {
-    position: relative;
-    width: 100%;
-    height: 180px;
+    justify-content: flex-end;
   }
 
   .mobileOverlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(11, 12, 16, 0.9) 100%);
+    background: linear-gradient(
+      180deg, 
+      rgba(0, 0, 0, 0.05) 30%, 
+      rgba(5, 5, 5, 0.88) 100%
+    );
+    z-index: 1;
   }
 
   .mobileTag {
     position: absolute;
-    top: 12px;
-    left: 12px;
-    background: rgba(11, 12, 16, 0.85);
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+    background: rgba(5, 5, 5, 0.75);
     border: 1px solid rgba(212, 175, 55, 0.4);
-    color: #D4AF37;
-    font-size: 0.6rem;
+    color: #e5c28a;
+    font-size: 0.68rem;
     font-weight: 600;
-    padding: 3px 8px;
-    border-radius: 20px;
-    letter-spacing: 0.1em;
+    padding: 5px 12px;
+    border-radius: 999px;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(8px);
   }
 
   .mobileCardBody {
-    padding: 14px 14px 18px;
-    background: #0B0C10;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    background: transparent;
   }
 
   .mobileTitle {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.15rem;
-    color: #FFF;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 1.35rem;
+    line-height: 1.25;
+    color: #FFFFFF;
     margin: 0 0 4px 0;
+    white-space: normal;
   }
 
   .mobileSubtitle {
     font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
-    color: #A0A0A0;
+    font-size: 0.85rem;
+    color: #CCCCCC;
     margin: 0;
   }
 }

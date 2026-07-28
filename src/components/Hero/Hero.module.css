@@ -68,13 +68,14 @@
 }
 
 .subtitle {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #d1d5db;
+  font-family: 'Poppins', 'Inter', sans-serif; /* or Manrope */
+  font-size: 22px; /* 22px–29px */
+  line-height: 1.7;
+  color: #e5e7eb;
   margin-bottom: 2rem;
-  max-width: 520px;
-  font-weight: 300;
+  max-width: 560px;
+  font-weight: 200;
+  letter-spacing: 0.2px;
 }
 
 .actions {
@@ -161,7 +162,7 @@
 }
 
 .featureLabel {
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: #e5e7eb;
   letter-spacing: 0.02em;
@@ -175,7 +176,7 @@
   .hero {
     padding-top: 80px;
     height: auto;
-    min-height: 100vh;
+    min-height: 98vh;
   }
 
   .contentContainer {
@@ -195,8 +196,11 @@
   }
 
   .subtitle {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     margin-bottom: 1.75rem;
+    font-weight: 500;
+     font-family: 'Poppins', 'Inter', sans-serif; /* or Manrope */
+
   }
 
   .actions {
@@ -227,13 +231,13 @@
   }
 
   .featureLabel {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     white-space: normal; /* Allows text wrapping smoothly on small devices */
   }
 
   .featureIcon {
-    width: 32px;
-    height: 32px;
+    width: 49px;
+    height: 49px;
     padding: 6px;
   }
 }

@@ -1,24 +1,25 @@
 'use client';
 
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 import styles from './About.module.css';
 
 const headingVariants: Variants = {
-  hidden: { opacity: 0, y: 25 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: 'easeOut' },
+    transition: { duration: 0.7, ease: 'easeOut' },
   },
 };
 
 const pillarVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 15 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: 'easeOut' },
+    transition: { delay: i * 0.1, duration: 0.5, ease: 'easeOut' },
   }),
 };
 
@@ -64,18 +65,44 @@ const pillarCards = [
 ];
 
 const stats = [
-  { value: '500+', label: 'Happy Clients' },
-  { value: '1000+', label: 'Deals Closed' },
-  { value: '5000+', label: 'Acres Sold' },
-  { value: '100%', label: 'Transparent Deals' },
+  { target: 500, suffix: '+', label: 'Happy Clients' },
+  { target: 1000, suffix: '+', label: 'Deals Closed' },
+  { target: 5000, suffix: '+', label: 'Acres Sold' },
+  { target: 100, suffix: '%', label: 'Transparent Deals' },
 ];
+
+function Counter({ target, suffix }: { target: number; suffix: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(count, target, { duration: 2, ease: 'easeOut' });
+      return controls.stop;
+    }
+  }, [isInView, count, target]);
+
+  useEffect(() => {
+    return rounded.on('change', (v) => {
+      if (ref.current) {
+        ref.current.textContent = `${v}${suffix}`;
+      }
+    });
+  }, [rounded, suffix]);
+
+  return <span ref={ref}>0{suffix}</span>;
+}
 
 export default function About() {
   return (
     <section id="about" className={styles.about}>
-      <div className={styles.container}>
+      
+      {/* Viewport Above-The-Fold Wrapper */}
+      <div className={styles.heroViewWrapper}>
         
-        {/* Top Split Section: Text on Left, High-End Office Image on Right */}
+        {/* Split Hero: Text Left, Image Right */}
         <div className={styles.topSection}>
           <div className={styles.copy}>
             <motion.h2
@@ -91,72 +118,78 @@ export default function About() {
 
             <motion.p
               className={styles.leadText}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.6 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
             >
               At Shivam Estates, we specialize in premium land and plot investments.
             </motion.p>
 
             <motion.p
               className={styles.bodyText}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.6 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
             >
               Our mission is to provide transparent transactions, verified properties, and expert guidance to help our clients build long-term wealth.
             </motion.p>
           </div>
 
-          {/* Right Dark Interior Office Image */}
           <motion.div
             className={styles.imageFrame}
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.8, ease: 'easeInOut' }}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <Image
               src="/farmhouse.png"
               alt="Shivam Estates Office"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className={styles.image}
+              priority
             />
           </motion.div>
         </div>
 
-        {/* Cream White Card for Pillars */}
+        {/* Off-White Pillars Section - Directly Connected below Hero */}
         <motion.div
           className={styles.pillarsContainer}
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8, ease: 'easeInOut' }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
         >
-          <div className={styles.pillarsGrid}>
-            {pillarCards.map((card, index) => (
-              <motion.div
-                key={card.title}
-                className={styles.pillarCard}
-                custom={index}
-                variants={pillarVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-                <div className={styles.pillarIconWrap}>
-                  <div className={styles.pillarIcon}>{card.icon}</div>
-                </div>
-                <h3 className={styles.pillarTitle}>{card.title}</h3>
-                <p className={styles.pillarDesc}>{card.description}</p>
-              </motion.div>
-            ))}
+          <div className={styles.container}>
+            <div className={styles.pillarsGrid}>
+              {pillarCards.map((card, index) => (
+                <motion.div
+                  key={card.title}
+                  className={styles.pillarCard}
+                  custom={index}
+                  variants={pillarVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                >
+                  <div className={styles.pillarIconWrap}>
+                    <div className={styles.pillarIcon}>{card.icon}</div>
+                  </div>
+                  <h3 className={styles.pillarTitle}>{card.title}</h3>
+                  <p className={styles.pillarDesc}>{card.description}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
 
-        {/* Stats Row Below Card on Dark Background */}
+      </div>
+
+      {/* Stats Section (Appears naturally below the fold when scrolling) */}
+      <div className={styles.container}>
         <motion.div
           className={styles.statsGrid}
           initial={{ opacity: 0, y: 20 }}
@@ -166,13 +199,15 @@ export default function About() {
         >
           {stats.map((stat) => (
             <div key={stat.label} className={styles.statCard}>
-              <strong className={styles.statValue}>{stat.value}</strong>
+              <strong className={styles.statValue}>
+                <Counter target={stat.target} suffix={stat.suffix} />
+              </strong>
               <span className={styles.statLabel}>{stat.label}</span>
             </div>
           ))}
         </motion.div>
-
       </div>
+
     </section>
   );
 }

@@ -13,7 +13,6 @@ const landListings = [
   { id: 5, title: 'Farmhouse Plots', subtitle: 'Luxury Living', image: '/farmhouse.png', tag: 'Premium' },
 ];
 
-// Duplicating the list ensures a seamless infinite loop without empty gaps
 const marqueeListings = [...landListings, ...landListings];
 
 export default function LandOpportunities() {
@@ -24,7 +23,7 @@ export default function LandOpportunities() {
       <div className={styles.headingWrap}>
         <motion.h2
           className={styles.title}
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
@@ -33,7 +32,7 @@ export default function LandOpportunities() {
         <p className={styles.subtitle}>Explore curated acreage for your next investment</p>
       </div>
 
-      {/* --- DESKTOP VIEW: Premium Accordion (Unchanged) --- */}
+      {/* --- DESKTOP VIEW: Premium Accordion --- */}
       <div className={styles.desktopAccordion}>
         {landListings.map((item) => {
           const isActive = activeId === item.id;
@@ -72,20 +71,19 @@ export default function LandOpportunities() {
       <div className={styles.mobileMarqueeWrapper}>
         <motion.div
           className={styles.mobileMarqueeTrack}
-          animate={{ x: ['-50%', '0%'] }} /* Animates smoothly from Left to Right */
+          animate={{ x: ['-50%', '0%'] }}
           transition={{
             ease: 'linear',
-            duration: 25, /* Adjust speed: higher = slower */
+            duration: 25,
             repeat: Infinity,
           }}
         >
           {marqueeListings.map((item, index) => (
             <div key={`${item.id}-${index}`} className={styles.mobileCard}>
-              <div className={styles.mobileImageWrap}>
-                <Image src={item.image} alt={item.title} fill className={styles.cardImage} />
-                <div className={styles.mobileOverlay} />
-                <span className={styles.mobileTag}>{item.tag}</span>
-              </div>
+              <Image src={item.image} alt={item.title} fill className={styles.cardImage} />
+              <div className={styles.mobileOverlay} />
+              
+              <span className={styles.mobileTag}>{item.tag}</span>
 
               <div className={styles.mobileCardBody}>
                 <h3 className={styles.mobileTitle}>{item.title}</h3>

@@ -65,17 +65,17 @@ const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.12,
+      staggerChildren: 0.1,
     },
   },
 };
 
 const rowVariants: Variants = {
-  hidden: { opacity: 0, x: -20 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
-    x: 0,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    y: 0,
+    transition: { duration: 0.5, ease: [0.25, 1, 0.5, 1] },
   },
 };
 
@@ -87,7 +87,7 @@ export default function Services() {
         {/* Header Section */}
         <motion.div
           className={styles.headingWrap}
-          initial={{ opacity: 0, y: -25 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -98,71 +98,49 @@ export default function Services() {
           <p className={styles.subtitle}>Complete Solutions for a Seamless Experience</p>
         </motion.div>
 
-        {/* Animated Wide Cream Card Container */}
-        <motion.div
-          className={styles.cardBox}
-          initial={{ opacity: 0, y: 35, scale: 0.98 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <motion.div
-            className={styles.servicesGrid}
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {services.map((service) => (
-              <motion.div
-                key={service.title}
-                className={styles.serviceRow}
-                variants={rowVariants}
-                whileHover={{
-                  x: 6,
-                  transition: { duration: 0.25, ease: 'easeOut' },
-                }}
-              >
-                <motion.div
-                  className={styles.iconCircle}
-                  whileHover={{ scale: 1.1, rotate: 4 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 15 }}
-                >
-                  {service.icon}
-                </motion.div>
-                <div className={styles.rowContent}>
-                  <h3 className={styles.serviceTitle}>{service.title}</h3>
-                  <p className={styles.serviceDesc}>{service.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-
-        {/* Animated Bottom CTA Banner */}
-        <motion.div
-          className={styles.ctaBanner}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-        >
-          <div className={styles.ctaGlow} />
-          <h3 className={styles.ctaTitle}>
-            We Handle The Details, <br />
-            <span>You Enjoy The Journey.</span>
-          </h3>
-          <motion.a
-            href="#contact"
-            className={styles.ctaButton}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            CONSULT OUR EXPERTS
-          </motion.a>
-        </motion.div>
-
       </div>
+
+      {/* Full-Width Cream Section */}
+      <motion.div
+        className={styles.cardBox}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <motion.div
+          className={styles.servicesGrid}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {services.map((service) => (
+            <motion.div
+              key={service.title}
+              className={styles.serviceRow}
+              variants={rowVariants}
+              whileHover={{
+                y: -4,
+                boxShadow: '0 12px 25px rgba(0,0,0,0.08)',
+                transition: { duration: 0.25, ease: 'easeOut' },
+              }}
+            >
+              <motion.div
+                className={styles.iconCircle}
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: 'spring', stiffness: 350, damping: 15 }}
+              >
+                {service.icon}
+              </motion.div>
+              <div className={styles.rowContent}>
+                <h3 className={styles.serviceTitle}>{service.title}</h3>
+                <p className={styles.serviceDesc}>{service.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
