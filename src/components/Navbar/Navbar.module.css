@@ -256,7 +256,7 @@
 }
 
 /* Responsive Media Queries */
-@media (max-width: 960px) {
+@media (max-width: 992px) {
   .desktopNav,
   .ctaButton {
     display: none;
@@ -268,5 +268,33 @@
 
   .brandTag {
     display: none;
+  }
+}
+
+
+
+
+@media (max-width: 1366px) {
+
+  .desktopNav {
+    gap: 14px;
+  }
+
+  .navLink {
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  .ctaButton {
+    padding: 8px 16px;
+    font-size: 0.75rem;
+  }
+
+  .brand {
+    font-size: 1.1rem;
+  }
+
+  .header {
+    padding: 16px 3vw;
   }
 }
