@@ -188,25 +188,27 @@ export default function About() {
 
       </div>
 
-      {/* Stats Section (Appears naturally below the fold when scrolling) */}
-      <div className={styles.container}>
-        <motion.div
-          className={styles.statsGrid}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          {stats.map((stat) => (
-            <div key={stat.label} className={styles.statCard}>
-              <strong className={styles.statValue}>
-                <Counter target={stat.target} suffix={stat.suffix} />
-              </strong>
-              <span className={styles.statLabel}>{stat.label}</span>
-            </div>
-          ))}
-        </motion.div>
-      </div>
+      {/* Stats Section with Top Light-to-Dark Fade */}
+      <section className={styles.statsSection}>
+        <div className={styles.container}>
+          <motion.div
+            className={styles.statsGrid}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            {stats.map((stat) => (
+              <div key={stat.label} className={styles.statCard}>
+                <strong className={styles.statValue}>
+                  <Counter target={stat.target} suffix={stat.suffix} />
+                </strong>
+                <span className={styles.statLabel}>{stat.label}</span>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
     </section>
   );

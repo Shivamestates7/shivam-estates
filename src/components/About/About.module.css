@@ -4,7 +4,6 @@
   scroll-margin-top: 85px;
 }
 
-
 .about {
   background-color: #0c0d0f;
   color: #ffffff;
@@ -47,7 +46,7 @@
 
 .title {
   font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
-  font-size: clamp(2.8rem, 4.5vh, 4.2rem); /* Significantly increased for impact */
+  font-size: clamp(2.8rem, 4.5vh, 4.2rem);
   font-weight: 600;
   line-height: 1.15;
   color: #e2c286;
@@ -59,7 +58,7 @@
 .leadText {
   font-family: 'Inter', system-ui, sans-serif;
   color: #ffffff;
-  font-size: clamp(1.15rem, 2vh, 1.35rem); /* Increased size to eliminate dead space */
+  font-size: clamp(1.15rem, 2vh, 1.35rem);
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 1.25rem;
@@ -93,7 +92,7 @@
   left: 0;
   width: 35%; /* Smooth left-to-right fade from dark background */
   height: 100%;
-  background: linear-gradient(to right, #0c0d0f 0%, rgba(12, 13, 15, 0.6) 50%, rgba(12, 13, 15, 0) 100%);
+  background: linear-gradient(to right, #0c0d0f 0%, rgba(12, 13, 15, 0.6) 50%, rgba(12, 13, 15, 0));
   z-index: 2;
   pointer-events: none;
 }
@@ -101,16 +100,13 @@
 .image {
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.92) contrast(1.05); /* Gives photo rich contrast */
+  filter: brightness(0.92) contrast(1.05);
 }
 
 /* Bottom Off-White Pillars Section */
-/* Bottom Off-White Pillars Section with Horizontal Fade */
-/* Bottom Off-White Pillars Section */
-/* Bottom Off-White Pillars Section */
 .pillarsContainer {
   background-color: #fbf9f5;
-  padding: 5rem 0 3rem 0; /* Extra top padding so content stays clean below the deep fade */
+  padding: 5rem 0 4rem 0;
   color: #111111;
   width: 100%;
   margin: 0;
@@ -118,16 +114,14 @@
   z-index: 3;
 }
 
-/* Deep, Dramatic Top Blend Effect */
+/* Deep Top Blend Effect for Pillars Section */
 .pillarsContainer::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px; /* Increased height dramatically to make the fade large and noticeable */
-  
-  /* Smooth transition from dark background color (#0c0d0f) to transparent */
+  height: 60px;
   background: linear-gradient(
     to bottom,
     #0c0d0f 0%,
@@ -138,10 +132,13 @@
   pointer-events: none;
   z-index: 4;
 }
+
 .pillarsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0;
+  position: relative;
+  z-index: 5;
 }
 
 .pillarCard {
@@ -170,7 +167,7 @@
 .pillarIcon {
   width: 46px;
   height: 46px;
-  color: #b8860b; /* Richer accent gold */
+  color: #b8860b;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -190,7 +187,7 @@
   font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
   font-size: 1.15rem;
   font-weight: 700;
-  color: #0f172a; /* Dark charcoal/slate for high contrast */
+  color: #0f172a;
   margin-top: 0.5rem;
   margin-bottom: 0.4rem;
   letter-spacing: -0.01em;
@@ -199,20 +196,53 @@
 .pillarDesc {
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 0.88rem;
-  color: #334155; /* Crisper, darker text color */
+  color: #334155;
   line-height: 1.55;
   font-weight: 450;
   max-width: 260px;
   margin: 0 auto;
 }
 
-/* Stats Section */
+/* ==========================================================
+   Stats Section Wrapper with Soft Blend from White (#fbf9f5) to Dark (#0c0d0f)
+   ========================================================== */
+.statsSection {
+  position: relative;
+  background-color: #0c0d0f;
+  padding-top: 4.5rem;
+  padding-bottom: 4rem;
+  width: 100%;
+  z-index: 3;
+}
+
+/* Gradient Fade transition overlay at top of Stats Section */
+.statsSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  
+  /* Blends from off-white background (#fbf9f5) down to transparent */
+  background: linear-gradient(
+    to bottom,
+    #fbf9f5 0%,
+    rgba(251, 249, 245, 0.75) 30%,
+    rgba(251, 249, 245, 0.3) 65%,
+    rgba(251, 249, 245, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 4;
+}
+
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   text-align: center;
-  padding: 4rem 0;
+  position: relative;
+  z-index: 5;
 }
 
 .statCard {
@@ -270,6 +300,10 @@
   .pillarCard:not(:last-child)::after {
     display: none;
   }
+
+  .statsSection::before {
+    height: 45px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -287,24 +321,25 @@
     gap: 1.75rem;
   }
 
-  .statsGrid {
-    padding: 3rem 0;
-  }
   .title {
-
     font-size: clamp(1.3rem, 4.5vh, 4.2rem); 
-
-
   }
+  
   .leadText {
-
-     font-size: clamp(1.1rem, 2vh, 1.35rem);
-
+    font-size: clamp(1.1rem, 2vh, 1.35rem);
   }
+  
   .bodyText {
-     font-size: clamp(1.1rem, 2vh, 1.35rem);
-     font-weight: 350;
+    font-size: clamp(1.1rem, 2vh, 1.35rem);
+    font-weight: 350;
+  }
 
+  .statsSection {
+    padding-top: 3.5rem;
+    padding-bottom: 3rem;
+  }
 
+  .statsSection::before {
+    height: 35px;
   }
 }
