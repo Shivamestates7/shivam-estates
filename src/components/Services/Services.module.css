@@ -59,9 +59,31 @@
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  padding: 4.5rem 0;
+  padding: 5rem 0 4.5rem 0; /* Increased top padding to keep cards safe below the fade */
   margin-bottom: 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  z-index: 3;
+}
+
+/* SEAMLESS DARK BLEND EFFECT AT THE TOP OF CREAM SECTION */
+.cardBox::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* Exact same height as your About section */
+  
+  /* Smooth transition from dark upper background (#0c0d0f) to transparent */
+  background: linear-gradient(
+    to bottom,
+    #0c0d0f 0%,
+    rgba(12, 13, 15, 0.75) 30%,
+    rgba(12, 13, 15, 0.3) 65%,
+    rgba(12, 13, 15, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 4;
 }
 
 /* Grid Alignment inside the Cream Band */
@@ -72,6 +94,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem 2.5rem;
+  position: relative;
+  z-index: 5; /* Ensures card content sits on top of the blend overlay */
 }
 
 /* Individual White Service Cards */
@@ -137,7 +161,11 @@
   }
 
   .cardBox {
-    padding: 3rem 0;
+    padding: 4rem 0 3rem 0;
+  }
+  
+  .cardBox::before {
+    height: 50px; /* Slightly reduced fade height for tablet */
   }
 }
 
@@ -145,14 +173,21 @@
   .container {
     padding: 0 1.25rem;
   }
+  
   .subtitle {
-     font-size: 1.4rem;
-     font-weight: 400;
-
-
+    font-size: 1.4rem;
+    font-weight: 400;
   }
 
   .serviceRow {
     padding: 1.25rem;
+  }
+
+  .cardBox {
+    padding: 3.5rem 0 2.5rem 0;
+  }
+
+  .cardBox::before {
+    height: 40px; /* Scaled down fade height for mobile screens */
   }
 }

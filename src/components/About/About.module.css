@@ -105,16 +105,39 @@
 }
 
 /* Bottom Off-White Pillars Section */
+/* Bottom Off-White Pillars Section with Horizontal Fade */
+/* Bottom Off-White Pillars Section */
+/* Bottom Off-White Pillars Section */
 .pillarsContainer {
-  background: #fbf9f5;
-  padding: 2.25rem 0;
+  background-color: #fbf9f5;
+  padding: 5rem 0 3rem 0; /* Extra top padding so content stays clean below the deep fade */
   color: #111111;
   width: 100%;
   margin: 0;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
   z-index: 3;
 }
 
+/* Deep, Dramatic Top Blend Effect */
+.pillarsContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* Increased height dramatically to make the fade large and noticeable */
+  
+  /* Smooth transition from dark background color (#0c0d0f) to transparent */
+  background: linear-gradient(
+    to bottom,
+    #0c0d0f 0%,
+    rgba(12, 13, 15, 0.75) 30%,
+    rgba(12, 13, 15, 0.3) 65%,
+    rgba(12, 13, 15, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 4;
+}
 .pillarsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -145,16 +168,17 @@
 }
 
 .pillarIcon {
-  width: 42px;
-  height: 42px;
-  color: #cba358;
+  width: 46px;
+  height: 46px;
+  color: #b8860b; /* Richer accent gold */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 9px;
-  border: 1px solid #cba358;
+  padding: 10px;
+  border: 1.5px solid #d4af37;
   border-radius: 50%;
-  background: #fbf9f5;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .pillarIcon svg {
@@ -164,18 +188,22 @@
 
 .pillarTitle {
   font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  color: #111111;
+  color: #0f172a; /* Dark charcoal/slate for high contrast */
+  margin-top: 0.5rem;
   margin-bottom: 0.4rem;
+  letter-spacing: -0.01em;
 }
 
 .pillarDesc {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 0.85rem;
-  color: #4b5563;
-  line-height: 1.45;
-  font-weight: 400;
+  font-size: 0.88rem;
+  color: #334155; /* Crisper, darker text color */
+  line-height: 1.55;
+  font-weight: 450;
+  max-width: 260px;
+  margin: 0 auto;
 }
 
 /* Stats Section */
