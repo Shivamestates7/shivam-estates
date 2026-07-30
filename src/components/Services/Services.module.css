@@ -1,193 +1,183 @@
 .services {
-  background-color: #0c0d0f;
-  color: #ffffff;
-  padding-top: 5rem;
-  padding-bottom: 2rem;
+  background-color: #fcfbf9;
+  color: #111111;
+  height: 91vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  scroll-margin-top: 80px;
 }
 
 .container {
-  max-width: 1280px;
+  max-width: 1320px; /* Expanded slightly for wider, premium cards */
+  width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Pulled top content up */
+  padding-top: clamp(2rem, 5vh, 4rem); /* Controls clean top breathing room */
+  height: 100%;
 }
 
-/* Header Styles */
+/* Header Section */
 .headingWrap {
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: clamp(1.8rem, 3.5vh, 3rem); /* Added breathing room below heading */
 }
 
 .kicker {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: #cba358;
+  letter-spacing: 0.22em;
+  color: #b88d3e;
   display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
 }
 
 .title {
-  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 900;
-  color: #ffffff;
-  margin-bottom: 1rem;
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: clamp(2.2rem, 3.5vw, 3rem); /* Slightly larger header */
+  font-weight: 800;
+  color: #111111;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.02em;
 }
 
 .goldLine {
   width: 60px;
   height: 2px;
   background: linear-gradient(90deg, transparent, #cba358, transparent);
-  margin: 0 auto 1.25rem;
+  margin: 0 auto;
 }
 
-.subtitle {
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 1.05rem;
-  color: #f3f4f7;
-  font-weight: 400;
+/* Expanded 3x2 Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem 2rem; /* Increased row and column gaps */
 }
 
-/* Full-Width Off-White / Cream Section */
-.cardBox {
+/* Slightly Larger, Spacious Cards */
+.card {
+  background: #ffffff;
+  border: 1px solid #e8e3d9;
+  border-radius: 14px;
+  padding: 1.85rem 1.75rem; /* Increased inner height & width padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   position: relative;
-  background: #fbf9f5;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  padding: 5rem 0 4.5rem 0; /* Increased top padding to keep cards safe below the fade */
-  margin-bottom: 0;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  z-index: 3;
+  overflow: hidden;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
 }
 
-/* SEAMLESS DARK BLEND EFFECT AT THE TOP OF CREAM SECTION */
-.cardBox::before {
+.card:hover {
+  border-color: #cba358;
+  box-shadow: 0 14px 32px rgba(203, 163, 88, 0.14), 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 60px; /* Exact same height as your About section */
-  
-  /* Smooth transition from dark upper background (#0c0d0f) to transparent */
-  background: linear-gradient(
-    to bottom,
-    #0c0d0f 0%,
-    rgba(12, 13, 15, 0.75) 30%,
-    rgba(12, 13, 15, 0.3) 65%,
-    rgba(12, 13, 15, 0) 100%
-  );
-  pointer-events: none;
-  z-index: 4;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #cba358, #e5ca8f, #cba358);
+  opacity: 0;
+  transition: opacity 0.35s ease;
 }
 
-/* Grid Alignment inside the Cream Band */
-.servicesGrid {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem 2.5rem;
-  position: relative;
-  z-index: 5; /* Ensures card content sits on top of the blend overlay */
+.card:hover::before {
+  opacity: 1;
 }
 
-/* Individual White Service Cards */
-.serviceRow {
+.cardHeader {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  padding: 1.75rem 2rem;
-  background: #ffffff;
-  border-radius: 10px;
-  border: 1px solid #e2ddd5;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-  cursor: pointer;
-  will-change: transform;
+  justify-content: space-between;
+  margin-bottom: 1.2rem; /* Better space between icon & card title */
 }
 
-.iconCircle {
-  width: 52px;
-  height: 52px;
-  min-width: 52px;
-  border-radius: 50%;
+.icon {
+  width: 48px;
+  height: 48px;
+  padding: 10px;
+  border-radius: 10px;
   background: #faf6ee;
   border: 1px solid #e8dcc4;
-  color: #cba358;
+  color: #b88d3e;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px;
+  transition: transform 0.35s ease, background 0.35s ease;
 }
 
-.iconCircle svg {
+.card:hover .icon {
+  transform: scale(1.05);
+  background: #f5ece0;
+}
+
+.icon svg {
   width: 100%;
   height: 100%;
 }
 
-.rowContent {
-  display: flex;
-  flex-direction: column;
+.number {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 0.85rem;
+  color: #b88d3e;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: #faf6ee;
+  padding: 4px 10px;
+  border-radius: 16px;
+  border: 1px solid #e8dcc4;
 }
 
-.serviceTitle {
-  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
-  font-size: 1.2rem;
-  font-weight: 600;
+.cardTitle {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 1.18rem; /* Slightly larger, clearer title */
+  font-weight: 700;
   color: #111111;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
 }
 
-.serviceDesc {
+.cardDesc {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 0.925rem;
+  font-size: 0.88rem;
   color: #555555;
-  line-height: 1.5;
+  line-height: 1.55;
   font-weight: 400;
 }
 
-/* Responsive Adjustments */
+/* Responsive Handling */
 @media (max-width: 1024px) {
-  .servicesGrid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    padding: 0 1.5rem;
+  .services {
+    height: auto;
+    max-height: none;
+    padding: 4rem 0;
   }
 
-  .cardBox {
-    padding: 4rem 0 3rem 0;
-  }
-  
-  .cardBox::before {
-    height: 50px; /* Slightly reduced fade height for tablet */
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
 }
 
 @media (max-width: 640px) {
-  .container {
-    padding: 0 1.25rem;
-  }
-  
-  .subtitle {
-    font-size: 1.4rem;
-    font-weight: 400;
-  }
-
-  .serviceRow {
-    padding: 1.25rem;
-  }
-
-  .cardBox {
-    padding: 3.5rem 0 2.5rem 0;
-  }
-
-  .cardBox::before {
-    height: 40px; /* Scaled down fade height for mobile screens */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }

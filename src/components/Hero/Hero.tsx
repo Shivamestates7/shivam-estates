@@ -57,11 +57,13 @@ export default function Hero() {
     <section id="home" className={styles.hero}>
       {/* Background Landscape Image */}
       <div className={styles.imageWrap}>
-        <Image
+<Image
           src="/hero-bg.png"
           alt="Shivam Estates Sunset View"
           fill
           priority
+          sizes="100vw"
+          quality={95}
           className={styles.heroImage}
         />
         <div className={styles.overlay} />

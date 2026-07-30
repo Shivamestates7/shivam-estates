@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from './Footer.module.css';
 
@@ -48,64 +49,78 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      {/* Animated Top Divider */}
-      <motion.div
-        className={styles.topLine}
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1, ease: 'easeOut' }}
-      />
+      {/* Upper Main Section (Light Theme) */}
+      <div className={styles.topSection}>
+        {/* Top Gold Line */}
+        <motion.div
+          className={styles.topLine}
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+        />
 
-      <div className={styles.content}>
-        {/* Brand Column */}
-        <div className={styles.brandBlock}>
-          <h2 className={styles.logo}>Shivam Estates</h2>
-          <span className={styles.tagline}>Luxury real estate advisory</span>
-        </div>
+        <div className={styles.content}>
+          {/* Brand Column */}
+          <div className={styles.brandBlock}>
+            <a href="#home" className={styles.logoWrap}>
+              <Image
+                src="/Shivamestates.png"
+                alt="Shivam Estates Logo"
+                width={160}
+                height={50}
+                className={styles.logoImg}
+                priority
+              />
+            </a>
+            <span className={styles.tagline}>Luxury real estate advisory</span>
+          </div>
 
-        {/* Navigation Column */}
-        <div className={styles.links}>
-          <p className={styles.columnTitle}>Navigation</p>
-          {navLinks.map((link) => (
-            <motion.a
-              key={link.name}
-              href={link.href}
-              className={styles.navLink}
-              whileHover={{ x: 4 }}
-              transition={{ duration: 0.2 }}
-            >
-              {link.name}
-            </motion.a>
-          ))}
-        </div>
-
-        {/* Social Links with Real SVG Icons */}
-        <div className={styles.socials}>
-          <p className={styles.columnTitle}>Connect</p>
-          <div className={styles.socialList}>
-            {socialLinks.map((social) => (
+          {/* Navigation Column */}
+          <div className={styles.links}>
+            <p className={styles.columnTitle}>Navigation</p>
+            {navLinks.map((link) => (
               <motion.a
-                key={social.name}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialItem}
-                whileHover={{ y: -3 }}
+                key={link.name}
+                href={link.href}
+                className={styles.navLink}
+                whileHover={{ x: 4 }}
                 transition={{ duration: 0.2 }}
               >
-                <span className={styles.iconWrap}>{social.icon}</span>
-                <span className={styles.socialName}>{social.name}</span>
+                {link.name}
               </motion.a>
             ))}
+          </div>
+
+          {/* Social Links */}
+          <div className={styles.socials}>
+            <p className={styles.columnTitle}>Connect</p>
+            <div className={styles.socialList}>
+              {socialLinks.map((social) => (
+                <motion.a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialItem}
+                  whileHover={{ y: -3 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <span className={styles.iconWrap}>{social.icon}</span>
+                  <span className={styles.socialName}>{social.name}</span>
+                </motion.a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Legal Bar */}
-      <div className={styles.bottomBar}>
-        <span>© 2026 Shivam Estates. All rights reserved.</span>
-        <span>Private tours by appointment</span>
+      {/* Dark Bottom Legal Bar (Original Color) */}
+      <div className={styles.bottomBarWrapper}>
+        <div className={styles.bottomBar}>
+          <span>© 2026 Shivam Estates. All rights reserved.</span>
+          <span>Private tours by appointment</span>
+        </div>
       </div>
     </footer>
   );

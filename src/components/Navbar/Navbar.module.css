@@ -8,17 +8,36 @@
   align-items: center;
   justify-content: space-between;
   padding: 18px 5vw;
-  background: rgba(11, 12, 16, 0.88);
+  background: rgba(11, 12, 16, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-/* Brand Styling (Left) */
+/* Brand Styling Container */
 .brandWrap {
   display: flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
+  position: relative;
+}
+
+.logoImg {
+  object-fit: contain;
+  width: auto;
+  height: 90px;
+  margin-top: -24px;
+  margin-bottom: -24px;
+  max-width: none;
+  filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+.logoImgDrawer {
+  object-fit: contain;
+  width: 88px;
+  height: 90px;
+  margin-bottom: 8px;
+  margin-top: -12px;
 }
 
 .brandMark {
@@ -101,7 +120,7 @@
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
-/* Mobile Hamburger Button (Three Lines - Positioned Right) */
+/* Mobile Hamburger Button */
 .hamburgerBtn {
   display: none;
   flex-direction: column;
@@ -190,7 +209,7 @@
   margin: 22px 0 16px 0;
 }
 
-/* Cleaned Mobile Nav Links */
+/* Mobile Nav Links */
 .drawerNav {
   display: flex;
   flex-direction: column;
@@ -255,11 +274,22 @@
   box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
 }
 
-/* Responsive Media Queries */
+/* Media Queries */
 @media (max-width: 992px) {
+  .header {
+    background: #0b0c10 !important;
+    backdrop-filter: none !important;
+    padding: 16px 5vw;
+  }
+
   .desktopNav,
   .ctaButton {
     display: none;
+  }
+
+  .logoImg {
+    width: auto;
+    padding: 8px;
   }
 
   .hamburgerBtn {
@@ -271,11 +301,7 @@
   }
 }
 
-
-
-
 @media (max-width: 1366px) {
-
   .desktopNav {
     gap: 20px;
   }

@@ -4,10 +4,11 @@
   grid-template-columns: 0.9fr 1.1fr;
   gap: 48px;
   align-items: center;
-  padding: 100px 4vw;
+  padding: 96px 4vw;
   background: #0B0C10; /* Dark charcoal theme */
   color: #ffffff;
   overflow: hidden;
+  scroll-margin-top: 80px;
 }
 
 .bgGlow {
@@ -33,6 +34,7 @@
   text-transform: uppercase;
   margin-bottom: 12px;
   font-weight: 600;
+  margin-top: -85px;
 }
 
 .title {

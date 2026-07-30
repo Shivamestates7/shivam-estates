@@ -6,11 +6,11 @@ import { motion } from 'framer-motion';
 import styles from './LandOpportunities.module.css';
 
 const landListings = [
-  { id: 1, title: 'Premium NA Plots', subtitle: 'Prime Location', image: '/plots.png', tag: 'High Yield' },
+  { id: 1, title: 'Premium NA Plots', subtitle: 'Prime Location', image: '/NAplots3.png', tag: 'High Yield' },
   { id: 2, title: 'Investment Land', subtitle: 'High Growth Zone', image: '/investment.png', tag: 'Strategic' },
-  { id: 3, title: 'Green Land', subtitle: 'Eco-Friendly Development', image: '/green-land.png', tag: 'Exclusive' },
+  { id: 3, title: 'Green Land', subtitle: 'Eco-Friendly Development', image: '/GreenLand.png', tag: 'Exclusive' },
   { id: 4, title: 'Agricultural Land', subtitle: 'Fertile Acreage', image: '/agriculture.png', tag: 'Acreage' },
-  { id: 5, title: 'Farmhouse Plots', subtitle: 'Luxury Living', image: '/farmhouse.png', tag: 'Premium' },
+  { id: 5, title: 'Farmhouse Plots', subtitle: 'Luxury Living', image: '/FarmHouse.png', tag: 'Premium' },
 ];
 
 const marqueeListings = [...landListings, ...landListings];

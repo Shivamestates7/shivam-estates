@@ -1,15 +1,20 @@
 .footer {
   position: relative;
-  padding: 60px 5vw 32px;
-  background: #0B0C10; /* Matching dark charcoal theme */
-  color: #ffffff;
+  background: #fcfbf9; /* Clean white / off-white background */
+  color: #111111;
+  overflow: hidden;
+}
+
+.topSection {
+  padding: 60px 5vw 48px;
 }
 
 .topLine {
-  height: 1px;
+  height: 2px;
   width: 100%;
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.72), transparent);
-  margin-bottom: 48px;
+  max-width: 1280px;
+  margin: 0 auto 48px;
+  background: linear-gradient(90deg, transparent, #cba358, transparent);
   transform-origin: center;
 }
 
@@ -25,37 +30,36 @@
 .brandBlock {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
+  align-items: flex-start;
 }
 
-.logo {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: #D4AF37;
-  background: linear-gradient(135deg, #FFF0C3 0%, #D4AF37 50%, #C5A059 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.logoWrap {
+  display: inline-block;
+}
+
+.logoImg {
+  object-fit: contain;
+  width: auto;
+  height: 150px;
 }
 
 .tagline {
   font-family: 'Inter', system-ui, sans-serif;
-  color: #A0A0A0;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  font-weight: 300;
+  color: #666666;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  font-weight: 400;
 }
 
 .columnTitle {
   font-family: 'Inter', system-ui, sans-serif;
-  color: #D4AF37;
-  font-size: 0.75rem;
+  color: #b88d3e;
+  font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  margin-bottom: 16px;
-  font-weight: 600;
+  margin-bottom: 18px;
+  font-weight: 700;
 }
 
 .links {
@@ -69,14 +73,15 @@
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #BDBDBD;
+  letter-spacing: 0.08em;
+  color: #333333;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-weight: 500;
 }
 
 .navLink:hover {
-  color: #D4AF37;
+  color: #b88d3e;
 }
 
 .socials {
@@ -95,30 +100,30 @@
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  color: #BDBDBD;
+  color: #333333;
   transition: color 0.3s ease;
 }
 
 .socialItem:hover {
-  color: #D4AF37;
+  color: #b88d3e;
 }
 
 .iconWrap {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  background: rgba(212, 175, 55, 0.08);
-  border: 1px solid rgba(212, 175, 55, 0.25);
-  color: #D4AF37;
+  background: #faf6ee;
+  border: 1px solid #e8dcc4;
+  color: #b88d3e;
   transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .socialItem:hover .iconWrap {
-  background: rgba(212, 175, 55, 0.2);
-  border-color: #D4AF37;
+  background: #f5ece0;
+  border-color: #b88d3e;
 }
 
 .iconWrap svg {
@@ -130,28 +135,36 @@
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+/* Original Dark Bottom Bar Styling */
+.bottomBarWrapper {
+  background: #0B0C10; /* Original Dark Charcoal Theme Color */
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  width: 100%;
 }
 
 .bottomBar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 16px;
   max-width: 1280px;
-  margin: 40px auto 0;
-  padding-top: 24px;
-  border-top: 1px solid rgba(212, 175, 55, 0.16);
+  margin: 0 auto;
+  padding: 24px 5vw;
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #777777;
+  color: #777777; /* Muted light text for readability on dark */
 }
 
-/* MOBILE CENTERING ADJUSTMENTS */
+/* Mobile Responsive */
 @media (max-width: 840px) {
-  .footer {
-    padding: 48px 5vw 28px;
+  .topSection {
+    padding: 48px 5vw 36px;
     text-align: center;
   }
 
@@ -163,18 +176,29 @@
 
   .brandBlock {
     align-items: center;
+    text-align: center;
   }
 
   .links {
     align-items: center;
+    text-align: center;
+    width: 100%;
   }
 
   .socials {
     align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .socialList {
+    align-items: center;
+    width: 100%;
   }
 
   .socialItem {
     justify-content: center;
+    width: 100%;
   }
 
   .bottomBar {
@@ -182,5 +206,6 @@
     align-items: center;
     text-align: center;
     gap: 10px;
+    padding: 20px 5vw;
   }
 }

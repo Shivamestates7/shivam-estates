@@ -11,8 +11,9 @@
   color: #e5c28a;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   margin-bottom: 12px;
+   transform: translateY(-28px);
 }
 
 .title {

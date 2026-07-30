@@ -39,7 +39,8 @@
   overflow: hidden;
   cursor: pointer;
   border: 1px solid rgba(212, 175, 55, 0.25);
-  transition: flex 0.5s ease, border-color 0.3s ease;
+  transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+  min-width: 0; /* Critical for CSS grid/flex text wrapping */
 }
 
 .activeCard {
@@ -54,48 +55,60 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.88) 100%);
 }
 
 .cardContent {
   position: absolute;
   bottom: 24px;
-  left: 24px;
-  right: 24px;
+  left: 20px;
+  right: 20px;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  pointer-events: none;
 }
 
 .tag {
   color: #D4AF37;
-  font-size: 0.75rem;
+  font-size: clamp(0.65rem, 0.8vw, 0.75rem);
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  margin-bottom: 4px;
+  display: block;
 }
 
+/* Responsive card title for both collapsed and expanded states */
 .cardTitle {
   font-family: 'Cinzel', Georgia, serif;
-  font-size: 1.4rem;
+  font-size: clamp(1rem, 1.3vw, 1.4rem);
   color: #fff;
-  white-space: nowrap;
+  line-height: 1.25;
+  margin: 0;
+  white-space: normal; /* Allows text to wrap neatly inside narrow cards */
+  word-break: break-word;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .cardSubtitle {
   color: #D0D0D0;
-  font-size: 0.88rem;
+  font-size: clamp(0.75rem, 0.9vw, 0.88rem);
   margin-top: 6px;
+  line-height: 1.4;
+  overflow: hidden;
 }
 
-/* MOBILE VIEW: Full-Screen height to block next sections */
+/* MOBILE VIEW */
 .mobileMarqueeWrapper {
   display: none;
 }
 
 @media (max-width: 860px) {
- 
   .section {
-    padding: 56px 0; /* Compact padding eliminates top/bottom empty voids */
+    padding: 56px 0;
     min-height: auto; 
-    scroll-margin-top: 80px;/* Remove 100dvh to stop forcing unnatural vertical gaps */
+    scroll-margin-top: 80px;
   }
 
   .headingWrap {
@@ -109,8 +122,8 @@
   }
 
   .subtitle {
-    font-size: 1.3rem;
-    margin-top: 35px;
+    font-size: 1.1rem;
+    margin-top: 12px;
   }
 
   .desktopAccordion {
@@ -129,14 +142,13 @@
     gap: 16px;
     width: max-content;
     will-change: transform;
-    padding-left: 16px; /* Offsets first card nicely from screen edge */
+    padding-left: 16px;
   }
 
-  /* Well-proportioned mobile card layout */
   .mobileCard {
     position: relative;
-    width: 280px;  /* Slightly wider for presence */
-    height: 380px; /* Tall, premium ratio that fills the section proportion */
+    width: 280px;
+    height: 380px;
     flex-shrink: 0;
     border: 1px solid rgba(212, 175, 55, 0.35);
     border-radius: 20px;

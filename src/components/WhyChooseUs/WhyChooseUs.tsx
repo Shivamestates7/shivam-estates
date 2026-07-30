@@ -12,7 +12,7 @@ const reasons = [
     detailText:
       'Every land parcel listed with Shivam Estates undergoes thorough legal scrutiny, revenue record updates (7/12 extract verification), and clear boundary demarcation before presentation.',
     bgImage:
-      'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80',
+      '/photo1.jpg',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -27,7 +27,7 @@ const reasons = [
     detailText:
       'We operate with full transparency at every phase. Direct pricing, structured timelines, and zero unexpected charges ensure complete peace of mind.',
     bgImage:
-      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80',
+      '/photo2.jpg',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="12" cy="12" r="10" />
@@ -42,7 +42,7 @@ const reasons = [
     detailText:
       'Leverage our 12+ years of local advisory experience to identify high-appreciation land, upcoming infrastructure corridors, and strategic commercial hotspots.',
     bgImage:
-      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80',
+      'photo3.jpg',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M22 12A10 10 0 1 1 12 2v10z" />
@@ -57,7 +57,7 @@ const reasons = [
     detailText:
       'Our white-glove advisory team handles everything—guided site visits, agreement drafting, registration assistance, and post-possession land care.',
     bgImage:
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+      'photo4.jpg',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />

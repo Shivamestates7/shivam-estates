@@ -1,7 +1,6 @@
 #about, 
 .about {
-  /* Set this value equal to your Navbar height + some padding (e.g. 90px to 110px) */
-  scroll-margin-top: 85px;
+  scroll-margin-top: 78px;
 }
 
 .about {
@@ -16,7 +15,7 @@
   padding: 0 2rem;
 }
 
-/* Wrapper to maintain above-the-fold display */
+/* Restored original full viewport height layout */
 .heroViewWrapper {
   display: flex;
   flex-direction: column;
@@ -24,10 +23,10 @@
   justify-content: space-between;
 }
 
-/* Hero Section Split Layout */
+/* Split Screen Layout (50/50 split) */
 .topSection {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr; /* Gives text side slightly more breathing room */
+  grid-template-columns: 1fr 1fr;
   align-items: stretch;
   width: 100%;
   flex: 1;
@@ -35,46 +34,67 @@
   background-color: #0c0d0f;
 }
 
-/* Left Content Area - Enhanced Typography & Spacing */
+/* Content Container with luxury padding and max-width control */
 .copy {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3.5rem 4rem 3.5rem 8%;
+  align-items: flex-end;
+  padding: 4rem 3rem 4rem 6%;
   z-index: 2;
+}
+
+.copyInner {
+  max-width: 540px;
+  width: 100%;
+}
+
+.tagline {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #cba358;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1rem;
 }
 
 .title {
   font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
-  font-size: clamp(2.8rem, 4.5vh, 4.2rem);
+  font-size: clamp(2.4rem, 4vh, 3.6rem);
   font-weight: 600;
   line-height: 1.15;
-  color: #e2c286;
-  margin-bottom: 2rem;
+  color: #fceecb;
   letter-spacing: -0.01em;
-  text-shadow: 0 2px 10px rgba(226, 194, 134, 0.15);
+  margin-bottom: 1.5rem;
+}
+
+.divider {
+  width: 50px;
+  height: 2px;
+  background-color: #cba358;
+  margin-bottom: 1.5rem;
 }
 
 .leadText {
   font-family: 'Inter', system-ui, sans-serif;
   color: #ffffff;
-  font-size: clamp(1.15rem, 2vh, 1.35rem);
+  font-size: clamp(1.05rem, 1.8vh, 1.25rem);
   font-weight: 400;
   line-height: 1.6;
-  margin-bottom: 1.25rem;
-  max-width: 620px;
+  margin-bottom: 1rem;
 }
 
 .bodyText {
   font-family: 'Inter', system-ui, sans-serif;
-  color: #f5f7fa;
-  font-size: clamp(1rem, 1.6vh, 1.1rem);
+  color: #a1a1aa;
+  font-size: clamp(0.92rem, 1.5vh, 1.05rem);
   line-height: 1.7;
-  font-weight: 500;
-  max-width: 600px;
+  font-weight: 400;
 }
 
-/* Right Side Image Frame with Seamless Dark Bleed Overlay */
+/* Full Bleed Right Image Frame */
 .imageFrame {
   position: relative;
   width: 100%;
@@ -84,29 +104,27 @@
   overflow: hidden;
 }
 
-/* Soft blend overlay eliminating the boxy hard-cut line */
-.imageFrame::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 35%; /* Smooth left-to-right fade from dark background */
-  height: 100%;
-  background: linear-gradient(to right, #0c0d0f 0%, rgba(12, 13, 15, 0.6) 50%, rgba(12, 13, 15, 0));
-  z-index: 2;
-  pointer-events: none;
-}
-
 .image {
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.92) contrast(1.05);
+  filter: brightness(0.95) contrast(1.02);
+}
+
+/* Soft internal border shadow so the image blends into the dark container edges */
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 12px 0 30px -10px rgba(12, 13, 15, 0.7);
+  pointer-events: none;
 }
 
 /* Bottom Off-White Pillars Section */
 .pillarsContainer {
   background-color: #fbf9f5;
-  padding: 5rem 0 4rem 0;
+  padding: 4.5rem 0 3.5rem 0;
   color: #111111;
   width: 100%;
   margin: 0;
@@ -114,31 +132,10 @@
   z-index: 3;
 }
 
-/* Deep Top Blend Effect for Pillars Section */
-.pillarsContainer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: linear-gradient(
-    to bottom,
-    #0c0d0f 0%,
-    rgba(12, 13, 15, 0.75) 30%,
-    rgba(12, 13, 15, 0.3) 65%,
-    rgba(12, 13, 15, 0) 100%
-  );
-  pointer-events: none;
-  z-index: 4;
-}
-
 .pillarsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0;
-  position: relative;
-  z-index: 5;
 }
 
 .pillarCard {
@@ -203,9 +200,7 @@
   margin: 0 auto;
 }
 
-/* ==========================================================
-   Stats Section Wrapper with Soft Blend from White (#fbf9f5) to Dark (#0c0d0f)
-   ========================================================== */
+/* Stats Section Wrapper */
 .statsSection {
   position: relative;
   background-color: #0c0d0f;
@@ -215,34 +210,11 @@
   z-index: 3;
 }
 
-/* Gradient Fade transition overlay at top of Stats Section */
-.statsSection::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  
-  /* Blends from off-white background (#fbf9f5) down to transparent */
-  background: linear-gradient(
-    to bottom,
-    #fbf9f5 0%,
-    rgba(251, 249, 245, 0.75) 30%,
-    rgba(251, 249, 245, 0.3) 65%,
-    rgba(251, 249, 245, 0) 100%
-  );
-  pointer-events: none;
-  z-index: 4;
-}
-
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   text-align: center;
-  position: relative;
-  z-index: 5;
 }
 
 .statCard {
@@ -280,16 +252,11 @@
 
   .copy {
     padding: 3.5rem 2rem;
+    align-items: auto;
   }
 
   .imageFrame {
     min-height: 380px;
-  }
-
-  .imageFrame::before {
-    width: 100%;
-    height: 40%;
-    background: linear-gradient(to bottom, #0c0d0f 0%, rgba(12, 13, 15, 0) 100%);
   }
 
   .pillarsGrid {
@@ -299,10 +266,6 @@
 
   .pillarCard:not(:last-child)::after {
     display: none;
-  }
-
-  .statsSection::before {
-    height: 45px;
   }
 }
 
@@ -319,27 +282,5 @@
   .statsGrid {
     grid-template-columns: 1fr;
     gap: 1.75rem;
-  }
-
-  .title {
-    font-size: clamp(1.3rem, 4.5vh, 4.2rem); 
-  }
-  
-  .leadText {
-    font-size: clamp(1.1rem, 2vh, 1.35rem);
-  }
-  
-  .bodyText {
-    font-size: clamp(1.1rem, 2vh, 1.35rem);
-    font-weight: 350;
-  }
-
-  .statsSection {
-    padding-top: 3.5rem;
-    padding-bottom: 3rem;
-  }
-
-  .statsSection::before {
-    height: 35px;
   }
 }

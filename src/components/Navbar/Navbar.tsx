@@ -1,79 +1,75 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Navbar.module.css';
 
-const navItems = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Land Opportunities', href: '#land-opportunities' },
-  { label: 'Services', href: '#services' },
-  { label: 'Why Us', href: '#why-us' },
-  { label: 'Contact', href: '#contact' },
+const navLinks = [
+  { name: 'Home', href: '#home' },
+  { name: 'About', href: '#about' },
+  { name: 'Services', href: '#services' },
+  { name: 'Properties', href: '#properties' },
+  { name: 'Investment', href: '#investment' },
+  { name: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMobileMenu = () => setMobileOpen((prev) => !prev);
-  const closeMobileMenu = () => setMobileOpen(false);
+  const toggleMobileMenu = () => setIsOpen((prev) => !prev);
+  const closeMobileMenu = () => setIsOpen(false);
 
   return (
-    <>
-      <motion.header
-        className={styles.header}
-        initial={{ y: -24, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: 'easeInOut' }}
+    <header className={styles.header}>
+      {/* Brand Logo & Title */}
+      <a href="#home" className={styles.brandWrap}>
+        <Image
+          src="/Shivamestates.png"
+          alt="Shivam Estates Logo"
+          width={300}
+          height={90}
+          className={styles.logoImg}
+          priority
+        />
+        <div className={styles.brandInfo}>
+          <p className={styles.brand}>Shivam Estates</p>
+          <span className={styles.brandTag}>
+            PREMIUM LAND INVESTMENTS &bull; TRANSPARENT DEALS &bull; TRUSTED ADVISORS
+          </span>
+        </div>
+      </a>
+
+      {/* Desktop Navigation */}
+      <nav className={styles.desktopNav}>
+        {navLinks.map((link) => (
+          <a key={link.name} href={link.href} className={styles.navLink}>
+            {link.name}
+          </a>
+        ))}
+      </nav>
+
+      {/* Desktop CTA Button */}
+      <a href="#contact" className={styles.ctaButton}>
+        Inquire Now
+      </a>
+
+      {/* Mobile Hamburger Button */}
+      <button
+        className={styles.hamburgerBtn}
+        onClick={toggleMobileMenu}
+        aria-label="Toggle Menu"
       >
-        {/* Left: Brand Logo & Name */}
-        <a href="#home" className={styles.brandWrap}>
-          <div className={styles.brandMark}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M12 2L3 9v11a1 1 0 001 1h16a1 1 0 001-1V9l-9-7z" />
-              <path d="M9 22V12h6v10" />
-            </svg>
-          </div>
-          <div className={styles.brandInfo}>
-            <p className={styles.brand}>Shivam Estates</p>
-            <span className={styles.brandTag}>
-              PREMIUM LAND INVESTMENTS &bull; TRANSPARENT DEALS &bull; TRUSTED ADVISORS
-            </span>
-          </div>
-        </a>
+        <span className={styles.bar} />
+        <span className={styles.bar} />
+        <span className={styles.bar} />
+      </button>
 
-        {/* Center: Desktop Navigation Links */}
-        <nav className={styles.desktopNav} aria-label="Primary navigation">
-          {navItems.map((item) => (
-            <a key={item.label} href={item.href} className={styles.navLink}>
-              {item.label}
-            </a>
-          ))}
-        </nav>
-
-        {/* Right: Desktop CTA Button */}
-        <a href="#contact" className={styles.ctaButton}>
-          Book Site Visit
-        </a>
-
-        {/* Right: Mobile Hamburger Button (Three Lines) */}
-        <button
-          className={styles.hamburgerBtn}
-          onClick={toggleMobileMenu}
-          aria-label="Open navigation menu"
-        >
-          <span className={`${styles.bar} ${mobileOpen ? styles.barTop : ''}`} />
-          <span className={`${styles.bar} ${mobileOpen ? styles.barMid : ''}`} />
-          <span className={`${styles.bar} ${mobileOpen ? styles.barBot : ''}`} />
-        </button>
-      </motion.header>
-
-      {/* Mobile Side Drawer Navigation */}
+      {/* Mobile Drawer Overlay & Menu */}
       <AnimatePresence>
-        {mobileOpen && (
+        {isOpen && (
           <>
-            {/* Dark Blur Overlay Backdrop */}
+            {/* Backdrop */}
             <motion.div
               className={styles.backdrop}
               initial={{ opacity: 0 }}
@@ -82,65 +78,66 @@ export default function Navbar() {
               onClick={closeMobileMenu}
             />
 
-            {/* Left Side Sliding Luxury Drawer */}
-            <motion.aside
+            {/* Side Drawer */}
+            <motion.div
               className={styles.sideDrawer}
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
-              transition={{ type: 'spring', stiffness: 280, damping: 28 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             >
-              {/* Drawer Header */}
+              {/* Drawer Header with Mobile Logo */}
               <div className={styles.drawerHeader}>
-                <div className={styles.drawerBrandInfo}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <Image
+                    src="/Shivamestates.png"
+                    alt="Shivam Estates Logo"
+                    width={200}
+                    height={65}
+                    className={styles.logoImgDrawer}
+                  />
                   <p className={styles.drawerBrand}>Shivam Estates</p>
-                  <span className={styles.drawerBrandTag}>LUXURY REAL ESTATE ADVISORY</span>
+                  <span className={styles.drawerBrandTag}>
+                    LUXURY REAL ESTATE ADVISORY
+                  </span>
                 </div>
 
-                <button
-                  className={styles.closeBtn}
-                  onClick={closeMobileMenu}
-                  aria-label="Close navigation menu"
-                >
+                <button className={styles.closeBtn} onClick={closeMobileMenu}>
                   ✕
                 </button>
               </div>
 
               <div className={styles.drawerDivider} />
 
-              {/* Cleaned Mobile Navigation Links */}
+              {/* Mobile Navigation Links */}
               <nav className={styles.drawerNav}>
-                {navItems.map((item, index) => (
-                  <motion.a
-                    key={item.label}
-                    href={item.href}
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
                     className={styles.drawerLink}
                     onClick={closeMobileMenu}
-                    initial={{ opacity: 0, x: -16 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05 + 0.08 }}
-                    whileHover={{ x: 6 }}
                   >
-                    <span className={styles.linkLabel}>{item.label}</span>
+                    <span className={styles.linkLabel}>{link.name}</span>
                     <span className={styles.linkArrow}>→</span>
-                  </motion.a>
+                  </a>
                 ))}
               </nav>
 
-              {/* Drawer Bottom CTA */}
+              {/* Mobile Drawer Footer CTA */}
               <div className={styles.drawerFooter}>
                 <a
                   href="#contact"
                   className={styles.drawerCta}
                   onClick={closeMobileMenu}
                 >
-                  Book Site Visit
+                  Inquire Now
                 </a>
               </div>
-            </motion.aside>
+            </motion.div>
           </>
         )}
       </AnimatePresence>
-    </>
+    </header>
   );
 }

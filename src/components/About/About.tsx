@@ -102,48 +102,48 @@ export default function About() {
       {/* Viewport Above-The-Fold Wrapper */}
       <div className={styles.heroViewWrapper}>
         
-        {/* Split Hero: Text Left, Image Right */}
+        {/* Full Bleed Split Layout restored */}
         <div className={styles.topSection}>
           <div className={styles.copy}>
-            <motion.h2
-              className={styles.title}
-              variants={headingVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              Building Trust. <br />
-              Delivering Value.
-            </motion.h2>
+            <div className={styles.copyInner}>
+              <span className={styles.tagline}>ABOUT SHIVAM ESTATES</span>
+              
+              <motion.h2
+                className={styles.title}
+                variants={headingVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                Building Trust. <br />
+                Delivering Value.
+              </motion.h2>
 
-            <motion.p
-              className={styles.leadText}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-            >
-              At Shivam Estates, we specialize in premium land and plot investments.
-            </motion.p>
+              <div className={styles.divider} />
 
-            <motion.p
-              className={styles.bodyText}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-            >
-              Our mission is to provide transparent transactions, verified properties, and expert guidance to help our clients build long-term wealth.
-            </motion.p>
+              <motion.p
+                className={styles.leadText}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+              >
+                At Shivam Estates, we specialize in premium land and plot investments.
+              </motion.p>
+
+              <motion.p
+                className={styles.bodyText}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              >
+                Our mission is to provide transparent transactions, verified properties, and expert guidance to help our clients build long-term wealth.
+              </motion.p>
+            </div>
           </div>
 
-          <motion.div
-            className={styles.imageFrame}
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          >
+          <div className={styles.imageFrame}>
             <Image
               src="/farmhouse.png"
               alt="Shivam Estates Office"
@@ -152,10 +152,12 @@ export default function About() {
               className={styles.image}
               priority
             />
-          </motion.div>
+            {/* Subtle inner dark gradient to bind the image gracefully into the design */}
+            <div className={styles.imageOverlay} />
+          </div>
         </div>
 
-        {/* Off-White Pillars Section - Directly Connected below Hero */}
+        {/* Off-White Pillars Section */}
         <motion.div
           className={styles.pillarsContainer}
           initial={{ opacity: 0, y: 15 }}
@@ -188,7 +190,7 @@ export default function About() {
 
       </div>
 
-      {/* Stats Section with Top Light-to-Dark Fade */}
+      {/* Stats Section */}
       <section className={styles.statsSection}>
         <div className={styles.container}>
           <motion.div
