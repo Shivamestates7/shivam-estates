@@ -24,14 +24,18 @@
 }
 
 /* Split Screen Layout (50/50 split) */
+/* Split Screen Layout with inner padding and gap */
 .topSection {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: stretch;
+  grid-template-columns: 1fr 1.25fr; /* Gives the image column ~55% of the width */
+  align-items: center; 
+  gap: 3.5rem;          /* Space between text and image */
   width: 100%;
-  flex: 1;
-  position: relative;
+  max-width: 1380px;   /* Slightly wider container so the image can expand */
+  margin: 0 auto;      
+  padding: 3rem 2rem;  /* Top/bottom margin around section */
   background-color: #0c0d0f;
+  box-sizing: border-box;
 }
 
 /* Content Container with luxury padding and max-width control */
@@ -39,13 +43,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
-  padding: 4rem 3rem 4rem 6%;
+  align-items: flex-start; /* Left align like the reference image */
+  padding: 0;              /* Clear full-bleed paddings */
   z-index: 2;
 }
 
 .copyInner {
-  max-width: 540px;
+  max-width: 100%;
   width: 100%;
 }
 
@@ -95,30 +99,45 @@
 }
 
 /* Full Bleed Right Image Frame */
+/* Full Bleed Right Image Frame */
+/* Full Bleed Right Image Frame */
+/* Container for the image with space around it */
 .imageFrame {
   position: relative;
   width: 100%;
-  min-height: 380px;
-  height: 100%;
-  margin: 0;
+  height: 420px;       /* Fixed tall height to make it feel substantial */
+  /* OR if using Next.js fill layout, aspect-ratio works too: */
+  /* aspect-ratio: 16 / 11; */ 
+  border-radius: 20px; /* Smooth rounded corners like the reference */
   overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* Inner wrapper for rounded image frame */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px; /* Smooth rounded corners */
+  overflow: hidden;
+  border: 1px solid rgba(203, 163, 88, 0.2); /* Subtle gold accent border */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); /* Floating elevation shadow */
+}
 .image {
+  width: 100% !important;
+  height: 100% !important;
   object-fit: cover;
   object-position: center;
+  border-radius: 20px;
   filter: brightness(0.95) contrast(1.02);
 }
 
-/* Soft internal border shadow so the image blends into the dark container edges */
 .imageOverlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  box-shadow: inset 12px 0 30px -10px rgba(12, 13, 15, 0.7);
+  inset: 0;
   pointer-events: none;
+  z-index: 2;
 }
 
 /* Bottom Off-White Pillars Section */
