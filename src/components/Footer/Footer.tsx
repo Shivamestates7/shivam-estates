@@ -65,8 +65,8 @@ export default function Footer() {
           <div className={styles.brandBlock}>
             <a href="#home" className={styles.logoWrap}>
               <Image
-                src="/Shivamestates.png"
-                alt="Shivam Estates Logo"
+                src="/NewLogo.png"
+                alt="Shree Sai Estates Logo"
                 width={160}
                 height={50}
                 className={styles.logoImg}
@@ -118,7 +118,7 @@ export default function Footer() {
       {/* Dark Bottom Legal Bar (Original Color) */}
       <div className={styles.bottomBarWrapper}>
         <div className={styles.bottomBar}>
-          <span>© 2026 Shivam Estates. All rights reserved.</span>
+          <span>© 2026 Shree Sai Estates. All rights reserved.</span>
           <span>Private tours by appointment</span>
         </div>
       </div>

@@ -59,7 +59,7 @@ export default function Hero() {
       <div className={styles.imageWrap}>
 <Image
           src="/hero-bg.png"
-          alt="Shivam Estates Sunset View"
+          alt="Shree Sai Estates Sunset View"
           fill
           priority
           sizes="100vw"

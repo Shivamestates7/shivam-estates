@@ -68,7 +68,7 @@ export default function FeaturedProperty() {
           >
             <div className={styles.infoItem}>
               <span>Price</span>
-              <strong>$4.8M</strong>
+              <strong>85 Laks</strong>
             </div>
 
             <div className={styles.divider} />

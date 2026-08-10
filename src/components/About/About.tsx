@@ -106,7 +106,7 @@ export default function About() {
         <div className={styles.topSection}>
           <div className={styles.copy}>
             <div className={styles.copyInner}>
-              <span className={styles.tagline}>ABOUT SHIVAM ESTATES</span>
+              <span className={styles.tagline}>ABOUT Shree Sai ESTATES</span>
               
               <motion.h2
                 className={styles.title}
@@ -128,7 +128,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, duration: 0.5 }}
               >
-                At Shivam Estates, we specialize in premium land and plot investments.
+                At Shree Sai Estates, we specialize in premium land and plot investments.
               </motion.p>
 
               <motion.p
@@ -146,7 +146,7 @@ export default function About() {
           <div className={styles.imageFrame}>
             <Image
               src="/farmhouse.png"
-              alt="Shivam Estates Office"
+              alt="Shree Sai Estates Office"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className={styles.image}

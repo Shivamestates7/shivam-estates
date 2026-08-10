@@ -10,7 +10,7 @@ const reasons = [
     title: '100% Verified Properties',
     shortText: 'Complete legal title checks and clear documentation.',
     detailText:
-      'Every land parcel listed with Shivam Estates undergoes thorough legal scrutiny, revenue record updates (7/12 extract verification), and clear boundary demarcation before presentation.',
+      'Every land parcel listed with Shree Sai Estates undergoes thorough legal scrutiny, revenue record updates (7/12 extract verification), and clear boundary demarcation before presentation.',
     bgImage:
       '/photo1.jpg',
     icon: (
@@ -188,7 +188,7 @@ export default function WhyChooseUs() {
                   <p className={styles.spotlightBody}>{activeReason.detailText}</p>
 
                   <div className={styles.cardFooterTag}>
-                    <span>Shivam Estates Guarantee</span>
+                    <span>Shree Sai Estates Guarantee</span>
                   </div>
                 </div>
               </motion.div>

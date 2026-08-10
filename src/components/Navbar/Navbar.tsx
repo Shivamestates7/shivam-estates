@@ -25,15 +25,15 @@ export default function Navbar() {
       {/* Brand Logo & Title */}
       <a href="#home" className={styles.brandWrap}>
         <Image
-          src="/Shivamestates.png"
-          alt="Shivam Estates Logo"
+          src="/NewLogo.png"
+          alt="Shree Sai Estates Logo"
           width={300}
           height={90}
           className={styles.logoImg}
           priority
         />
         <div className={styles.brandInfo}>
-          <p className={styles.brand}>Shivam Estates</p>
+          <p className={styles.brand}>Shree Sai Estates</p>
           <span className={styles.brandTag}>
             PREMIUM LAND INVESTMENTS &bull; TRANSPARENT DEALS &bull; TRUSTED ADVISORS
           </span>
@@ -90,13 +90,13 @@ export default function Navbar() {
               <div className={styles.drawerHeader}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   <Image
-                    src="/Shivamestates.png"
-                    alt="Shivam Estates Logo"
+                    src="/Shree Saiestates.png"
+                    alt="Shree Sai Estates Logo"
                     width={200}
                     height={65}
                     className={styles.logoImgDrawer}
                   />
-                  <p className={styles.drawerBrand}>Shivam Estates</p>
+                  <p className={styles.drawerBrand}>Shree Sai Estates</p>
                   <span className={styles.drawerBrandTag}>
                     LUXURY REAL ESTATE ADVISORY
                   </span>
