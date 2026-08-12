@@ -15,21 +15,26 @@
 
 /* Brand Styling Container */
 .brandWrap {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
   position: relative;
+  flex-shrink: 0;
+  margin-top: 4px;
+  margin-bottom: -12px;
 }
 
 .logoImg {
   object-fit: contain;
-  width: 90px;
-  height: 60px;
-  margin-top: -24px;
-  margin-bottom: -24px;
+  width: auto;
+  height: 80px;
+  margin-top: 1px;
+  margin-bottom: -12px;
+   transform: translateY(-15px);
   max-width: none;
-  filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
+  transition: height 0.35s ease, filter 0.35s ease;
 }
 
 .logoImgDrawer {
@@ -99,6 +104,11 @@
 
 .navLink:hover {
   color: #D4AF37;
+}
+
+.navLinkActive {
+  color: #D4AF37 !important;
+  font-weight: 700;
 }
 
 .ctaButton {
@@ -231,6 +241,16 @@
 .drawerLink:hover {
   background: rgba(212, 175, 55, 0.08);
   border-color: rgba(212, 175, 55, 0.35);
+}
+
+.drawerLinkActive {
+  background: rgba(212, 175, 55, 0.12) !important;
+  border-color: rgba(212, 175, 55, 0.4) !important;
+}
+
+.drawerLinkActive .linkLabel {
+  color: #D4AF37 !important;
+  font-weight: 700;
 }
 
 .linkLabel {

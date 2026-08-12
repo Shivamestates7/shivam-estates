@@ -25,7 +25,7 @@ export default function Navbar() {
       {/* Brand Logo & Title */}
       <a href="#home" className={styles.brandWrap}>
         <Image
-          src="/ShreeSaiNewLogo.png"
+          src="/NewLogo2.png"
           alt="Shree Sai Estates Logo"
           width={300}
           height={90}
@@ -90,7 +90,7 @@ export default function Navbar() {
               <div className={styles.drawerHeader}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   <Image
-                    src="/Shree Saiestates.png"
+                    src="/NewLogo2.png"
                     alt="Shree Sai Estates Logo"
                     width={200}
                     height={65}
