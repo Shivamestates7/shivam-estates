@@ -25,7 +25,7 @@ export default function Navbar() {
       {/* Brand Logo & Title */}
       <a href="#home" className={styles.brandWrap}>
         <Image
-          src="/NewLogo.png"
+          src="/ShreeSaiNewLogo.png"
           alt="Shree Sai Estates Logo"
           width={300}
           height={90}

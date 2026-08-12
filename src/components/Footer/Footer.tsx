@@ -65,7 +65,7 @@ export default function Footer() {
           <div className={styles.brandBlock}>
             <a href="#home" className={styles.logoWrap}>
               <Image
-                src="/NewLogo.png"
+                src="/ShreeSaiNewLogo.png"
                 alt="Shree Sai Estates Logo"
                 width={160}
                 height={50}
