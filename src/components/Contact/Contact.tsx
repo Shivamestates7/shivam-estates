@@ -15,7 +15,7 @@ const contactDetails = [
     ),
   },
   {
-    text: 'interiorsshreesai05@gmail.com',
+    text: 'shreesaiestates2@gmail.com',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -24,7 +24,7 @@ const contactDetails = [
     ),
   },
   {
-    text: '123, ABC Road, Nashik, Maharashtra - 422001',
+    text: '2nd floor dusane golden bricks, narayan bapu nagar, jail road, nashik road, nashik-422101',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
