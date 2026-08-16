@@ -212,6 +212,27 @@ export default function About() {
         </div>
       </section>
 
+      {/* Expertise Section with White Background */}
+      <section className={styles.expertiseSection}>
+        <div className={styles.container}>
+          <motion.div
+            className={styles.expertiseContent}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+          >
+            <span className={styles.expertiseTagline}>OUR CAPABILITIES</span>
+            <h2 className={styles.expertiseTitle}>Our Expertise</h2>
+            <div className={styles.expertiseDivider} />
+            <h3 className={styles.expertiseSubtitle}>Sole Selling & Project Sales</h3>
+            <p className={styles.expertiseDesc}>
+              We specialise in the exclusive sales and marketing of real estate projects, partnering with developers and landowners to maximise their project's reach and sales potential. From strategic positioning and targeted marketing to generating qualified leads and managing the sales process, we work closely with our partners to drive successful project sales.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
     </section>
   );
 }
