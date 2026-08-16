@@ -34,6 +34,15 @@ const socialLinks = [
     ),
   },
   {
+    name: 'Twitter',
+    href: 'https://x.com/ShreeSaiEstates',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+  },
+  {
     name: 'WhatsApp',
     href: 'https://wa.me/919168268068?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20land%20investments.',
     icon: (
@@ -90,7 +99,7 @@ export default function Footer() {
             ))}
           </div>
 
-          {/* Social Links (Kept in original order and position) */}
+          {/* Social Links */}
           <div className={styles.socials}>
             <p className={styles.columnTitle}>Connect</p>
             <div className={styles.socialList}>
@@ -115,7 +124,6 @@ export default function Footer() {
               <p className={styles.columnTitle} style={{ marginBottom: '8px' }}>Timing</p>
               <p className={styles.timingText} style={{ fontSize: '0.85rem', opacity: 0.8, lineHeight: '1.5' }}>
                 Mon - Sat: 9:30 AM - 6:30 PM<br />
-                
               </p>
             </div>
           </div>
