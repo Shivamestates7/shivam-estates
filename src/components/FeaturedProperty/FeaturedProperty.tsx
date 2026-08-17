@@ -75,7 +75,7 @@ export default function FeaturedProperty() {
 
             <div className={styles.infoItem}>
               <span>Location</span>
-              <strong>Malabar Hill, Mumbai</strong>
+              <strong>Nashik</strong>
             </div>
 
             <div className={styles.divider} />
