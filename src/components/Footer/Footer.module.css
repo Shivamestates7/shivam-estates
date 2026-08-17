@@ -162,42 +162,73 @@
 }
 
 /* Mobile Responsive */
+/* Mobile Responsive */
+/* Mobile Responsive */
+/* Mobile Responsive */
+/* Mobile Responsive */
 @media (max-width: 840px) {
   .topSection {
     padding: 48px 5vw 36px;
-    text-align: center;
   }
 
   .content {
-    grid-template-columns: 1fr;
-    gap: 36px;
-    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      "brand brand"
+      "nav connect"
+      "timing timing"; /* This explicitly spans the timing block across both columns */
+    gap: 32px 20px;
+    align-items: start;
+    justify-items: stretch;
   }
 
   .brandBlock {
+    grid-area: brand;
     align-items: center;
     text-align: center;
+    width: 100%;
   }
 
   .links {
-    align-items: center;
-    text-align: center;
+    grid-area: nav;
+    align-items: flex-start;
+    text-align: left;
     width: 100%;
   }
 
   .socials {
-    align-items: center;
-    text-align: center;
+    grid-area: connect;
+    align-items: flex-start;
+    text-align: left;
     width: 100%;
   }
 
   .socialList {
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
   }
 
   .socialItem {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  /* Force the timing section into its own grid row, spanning both columns centered */
+  .timingBlock {
+    grid-area: timing;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 16px !important;
+  }
+
+  .timingBlock .columnTitle,
+  .timingBlock .timingText {
+    text-align: center;
     width: 100%;
   }
 

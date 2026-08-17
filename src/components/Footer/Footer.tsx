@@ -118,14 +118,14 @@ export default function Footer() {
                 </motion.a>
               ))}
             </div>
+          </div>
 
-            {/* Timing added directly below the socials section */}
-            <div className={styles.timingBlock} style={{ marginTop: '20px' }}>
-              <p className={styles.columnTitle} style={{ marginBottom: '8px' }}>Timing</p>
-              <p className={styles.timingText} style={{ fontSize: '0.85rem', opacity: 0.8, lineHeight: '1.5' }}>
-                Mon - Sat: 9:30 AM - 6:30 PM<br />
-              </p>
-            </div>
+          {/* Timing Section separated cleanly out of socials */}
+          <div className={styles.timingBlock}>
+            <p className={styles.columnTitle}>Timing</p>
+            <p className={styles.timingText} style={{ fontSize: '0.85rem', opacity: 0.8, lineHeight: '1.5' }}>
+              Mon - Sat: 9:30 AM - 6:30 PM
+            </p>
           </div>
         </div>
       </div>

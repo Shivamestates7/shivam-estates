@@ -32,7 +32,7 @@ const services = [
     ),
   },
   {
-    title: 'Soul Selling',
+    title: 'Sole Selling',
     description: 'Dedicated and exclusive property marketing and sales strategies designed to close deals seamlessly.',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor">
