@@ -16,7 +16,7 @@ const contactDetails = [
     value: '+919168268068',
   },
   {
-    text: 'info@shreesaiestates.com',
+    text: 'info@shreesaiestates.co.in',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -24,7 +24,7 @@ const contactDetails = [
       </svg>
     ),
     actionType: 'email',
-    value: 'info@shreesaiestates.com',
+    value: 'info@shreesaiestates.co.in',
   },
   {
     text: 'Shree Sai Business Group, 2nd floor dusane golden bricks, narayan bapu nagar, jail road, nashik road, nashik - 422101',
