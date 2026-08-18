@@ -10,7 +10,7 @@ const landListings = [
   { id: 2, title: 'Investment Land', subtitle: 'High Growth Zone', image: '/investment.png', tag: 'Strategic' },
   { id: 3, title: 'Green Land', subtitle: 'Eco-Friendly Development', image: '/GreenLand.png', tag: 'Exclusive' },
   { id: 4, title: 'Agricultural Land', subtitle: 'Fertile Acreage', image: '/agriculture.png', tag: 'Acreage' },
-  { id: 5, title: 'Farmhouse Plots', subtitle: 'Luxury Living', image: '/farmhouse.png', tag: 'Premium' },
+  { id: 5, title: 'Farmhouse Plots', subtitle: 'Luxury Living', image: '/newfarmhouse.png', tag: 'Premium' },
 ];
 
 const marqueeListings = [...landListings, ...landListings];
