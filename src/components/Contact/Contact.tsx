@@ -36,6 +36,7 @@ const contactDetails = [
     ),
     actionType: 'map',
     value: "https://www.google.com/maps/place/19%C2%B058'35.2%22N+73%C2%B050'10.8%22E/@19.9764412,73.8337687,17z/data=!3m1!4b1!4m4!3m3!8m2!3d19.9764412!4d73.8363436!18m1!1e1?entry=ttu",
+
   },
 ];
 
