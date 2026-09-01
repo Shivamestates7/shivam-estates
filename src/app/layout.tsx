@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/ShreeSaiNewLogo.png",
   },
+  verification: {
+    google: "B9LDBuK4gy8pv5HTBihR_PiqbRfs4zld-esIQz3J3_o"
+  },
 };
 
 export default function RootLayout({
